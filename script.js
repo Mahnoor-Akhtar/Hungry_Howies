@@ -125,7 +125,7 @@ function init3DBackground() {
         positions[i + 1] = (Math.random() - 0.5) * 20;
         positions[i + 2] = (Math.random() - 0.5) * 20;
         
-        // Golden particles
+        // Green particles
         colors[i] = 0.72; // R
         colors[i + 1] = 0.53; // G
         colors[i + 2] = 0.04; // B
@@ -390,7 +390,7 @@ if (reservationForm) {
                 input.style.borderColor = '#ff4444';
                 isValid = false;
             } else {
-                input.style.borderColor = 'rgba(184, 134, 11, 0.8)';
+                input.style.borderColor = 'rgba(57, 211, 83, 0.35)';
             }
         });
         
