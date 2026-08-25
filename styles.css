@@ -1339,8 +1339,9 @@ body {
 
 
 .logo-img {
-    height: 50px;
+    height: 65px;
     width: auto;
+    margin-left: 15px;
     transition: all 0.3s ease;
     filter: drop-shadow(0 0 10px var(--glow-red));
 }
