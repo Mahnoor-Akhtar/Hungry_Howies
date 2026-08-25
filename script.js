@@ -125,10 +125,10 @@ function init3DBackground() {
         positions[i + 1] = (Math.random() - 0.5) * 20;
         positions[i + 2] = (Math.random() - 0.5) * 20;
         
-        // Green particles
-        colors[i] = 0.72; // R
-        colors[i + 1] = 0.53; // G
-        colors[i + 2] = 0.04; // B
+        // Red brand particles
+        colors[i] = 0.93; // R
+        colors[i + 1] = 0.11; // G
+        colors[i + 2] = 0.14; // B
     }
     
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
@@ -390,7 +390,7 @@ if (reservationForm) {
                 input.style.borderColor = '#ff4444';
                 isValid = false;
             } else {
-                input.style.borderColor = 'rgba(57, 211, 83, 0.35)';
+                input.style.borderColor = 'rgba(237, 28, 36, 0.35)';
             }
         });
         
@@ -409,7 +409,7 @@ if (reservationForm) {
             
             setTimeout(() => {
                 submitBtn.textContent = 'Reservation Confirmed!';
-                submitBtn.style.background = 'linear-gradient(45deg, #4caf50, #45a049)';
+                submitBtn.style.background = 'linear-gradient(45deg, #ED1C24, #B5121B)';
                 
                 gsap.to(submitBtn, {
                     duration: 0.3,
@@ -447,7 +447,7 @@ if (newsletterForm) {
         if (input.value.trim() && input.value.includes('@')) {
             const originalText = button.textContent;
             button.textContent = 'Subscribed!';
-            button.style.background = '#4caf50';
+            button.style.background = '#ED1C24';
             
             gsap.to(button, {
                 duration: 0.3,
