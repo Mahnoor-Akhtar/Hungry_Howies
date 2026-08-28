@@ -158,7 +158,10 @@ const navMenu = document.querySelector('.nav-menu');
 if (hamburger) {
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
+        const isActive = navMenu ? navMenu.classList.toggle('active') : false;
+        if (isActive) {
+            pushNavigationState('navMenu');
+        }
     });
 }
 
@@ -294,7 +297,10 @@ let currentCategory = 'all';
 if (dropdownTrigger) {
     dropdownTrigger.addEventListener('click', (e) => {
         e.stopPropagation();
-        dropdownWrapper.classList.toggle('open');
+        const isOpen = dropdownWrapper.classList.toggle('open');
+        if (isOpen) {
+            pushNavigationState('customDropdown');
+        }
     });
 }
 
@@ -433,6 +439,70 @@ if (resetSearchBtn) {
     });
 }
 
+// History State & Mobile Back Button Navigation Handler
+function pushNavigationState(screenId) {
+    try {
+        if (!window.history.state || window.history.state.modalScreen !== screenId) {
+            window.history.pushState({ modalScreen: screenId }, '', '#' + screenId);
+        }
+    } catch (err) {
+        console.error('History pushState error:', err);
+    }
+}
+
+function closeActiveScreens() {
+    let closedAny = false;
+
+    // Dynamically find any full screen detail modal that is currently active
+    const activeScreens = document.querySelectorAll('[id$="DetailsScreen"].active');
+    activeScreens.forEach(screen => {
+        screen.classList.remove('active');
+        closedAny = true;
+        setTimeout(() => {
+            screen.style.display = 'none';
+        }, 400);
+    });
+
+    if (hamburger && hamburger.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        if (navMenu) navMenu.classList.remove('active');
+        closedAny = true;
+    }
+
+    if (dropdownWrapper && dropdownWrapper.classList.contains('open')) {
+        dropdownWrapper.classList.remove('open');
+        closedAny = true;
+    }
+
+    if (closedAny) {
+        document.body.style.overflow = '';
+    }
+
+    return closedAny;
+}
+
+function closeScreenWithHistory(screenElement) {
+    if (screenElement && screenElement.classList.contains('active')) {
+        if (window.history.state && window.history.state.modalScreen) {
+            window.history.back();
+        } else {
+            screenElement.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                screenElement.style.display = 'none';
+            }, 400);
+            if (window.location.hash) {
+                history.replaceState(null, '', window.location.pathname + window.location.search);
+            }
+        }
+    }
+}
+
+// Global popstate listener for Mobile Hardware/Browser Back Button Navigation
+window.addEventListener('popstate', () => {
+    closeActiveScreens();
+});
+
 // Dedicated Full Screen Pizza View Navigation Handler
 const pizzaDetailsScreen = document.getElementById('pizzaDetailsScreen');
 const backToMenuBtn = document.getElementById('backToMenuBtn');
@@ -447,19 +517,14 @@ if (pizzaCard) {
             setTimeout(() => {
                 pizzaDetailsScreen.classList.add('active');
             }, 10);
+            pushNavigationState('pizzaDetailsScreen');
         }
     });
 }
 
 if (backToMenuBtn) {
     backToMenuBtn.addEventListener('click', () => {
-        if (pizzaDetailsScreen) {
-            pizzaDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => {
-                pizzaDetailsScreen.style.display = 'none';
-            }, 400);
-        }
+        closeScreenWithHistory(pizzaDetailsScreen);
     });
 }
 
@@ -486,21 +551,17 @@ if (steakCard) {
                     { opacity: 1, y: 0, duration: 0.4, stagger: 0.1, ease: 'power2.out', delay: 0.5 }
                 );
             }, 10);
+            pushNavigationState('steakDetailsScreen');
         }
     });
 }
 
 if (backToMenuBtnSteak) {
     backToMenuBtnSteak.addEventListener('click', () => {
-        if (steakDetailsScreen) {
-            steakDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => {
-                steakDetailsScreen.style.display = 'none';
-            }, 400);
-        }
+        closeScreenWithHistory(steakDetailsScreen);
     });
 }
+
 // Dedicated Full Screen Burger Selection View Navigation Handler
 const burgerDetailsScreen = document.getElementById('burgerDetailsScreen');
 const backToMenuBtnBurger = document.getElementById('backToMenuBtnBurger');
@@ -530,6 +591,7 @@ function openBurgerDetails() {
                 { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
             );
         }, 10);
+        pushNavigationState('burgerDetailsScreen');
     }
 }
 
@@ -542,13 +604,7 @@ if (burgerCard) {
 
 if (backToMenuBtnBurger) {
     backToMenuBtnBurger.addEventListener('click', () => {
-        if (burgerDetailsScreen) {
-            burgerDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => {
-                burgerDetailsScreen.style.display = 'none';
-            }, 400);
-        }
+        closeScreenWithHistory(burgerDetailsScreen);
     });
 }
 
@@ -577,6 +633,7 @@ function openBrostDetails() {
                 { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
             );
         }, 10);
+        pushNavigationState('brostDetailsScreen');
     }
 }
 
@@ -589,13 +646,7 @@ if (brostCard) {
 
 if (backToMenuBtnBrost) {
     backToMenuBtnBrost.addEventListener('click', () => {
-        if (brostDetailsScreen) {
-            brostDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => {
-                brostDetailsScreen.style.display = 'none';
-            }, 400);
-        }
+        closeScreenWithHistory(brostDetailsScreen);
     });
 }
 
@@ -620,6 +671,7 @@ function openPastaDetails() {
                 { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
             );
         }, 10);
+        pushNavigationState('pastaDetailsScreen');
     }
 }
 
@@ -632,13 +684,7 @@ if (pastaCard) {
 
 if (backToMenuBtnPasta) {
     backToMenuBtnPasta.addEventListener('click', () => {
-        if (pastaDetailsScreen) {
-            pastaDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => {
-                pastaDetailsScreen.style.display = 'none';
-            }, 400);
-        }
+        closeScreenWithHistory(pastaDetailsScreen);
     });
 }
 
@@ -671,6 +717,7 @@ function openPaniniDetails() {
                 { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
             );
         }, 10);
+        pushNavigationState('paniniDetailsScreen');
     }
 }
 
@@ -683,13 +730,7 @@ if (paniniCard) {
 
 if (backToMenuBtnPanini) {
     backToMenuBtnPanini.addEventListener('click', () => {
-        if (paniniDetailsScreen) {
-            paniniDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => {
-                paniniDetailsScreen.style.display = 'none';
-            }, 400);
-        }
+        closeScreenWithHistory(paniniDetailsScreen);
     });
 }
 
@@ -714,6 +755,7 @@ function openAppetizerDetails() {
                 { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
             );
         }, 10);
+        pushNavigationState('appetizerDetailsScreen');
     }
 }
 
@@ -726,13 +768,7 @@ if (appetizerCard) {
 
 if (backToMenuBtnAppetizer) {
     backToMenuBtnAppetizer.addEventListener('click', () => {
-        if (appetizerDetailsScreen) {
-            appetizerDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => {
-                appetizerDetailsScreen.style.display = 'none';
-            }, 400);
-        }
+        closeScreenWithHistory(appetizerDetailsScreen);
     });
 }
 
@@ -757,6 +793,7 @@ function openFriesDetails() {
                 { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
             );
         }, 10);
+        pushNavigationState('friesDetailsScreen');
     }
 }
 
@@ -769,13 +806,7 @@ if (friesCard) {
 
 if (backToMenuBtnFries) {
     backToMenuBtnFries.addEventListener('click', () => {
-        if (friesDetailsScreen) {
-            friesDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => {
-                friesDetailsScreen.style.display = 'none';
-            }, 400);
-        }
+        closeScreenWithHistory(friesDetailsScreen);
     });
 }
 
@@ -800,6 +831,7 @@ function openBeveragesDetails() {
                 { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
             );
         }, 10);
+        pushNavigationState('beveragesDetailsScreen');
     }
 }
 
@@ -812,13 +844,7 @@ if (beveragesCard) {
 
 if (backToMenuBtnBeverages) {
     backToMenuBtnBeverages.addEventListener('click', () => {
-        if (beveragesDetailsScreen) {
-            beveragesDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => {
-                beveragesDetailsScreen.style.display = 'none';
-            }, 400);
-        }
+        closeScreenWithHistory(beveragesDetailsScreen);
     });
 }
 
@@ -843,6 +869,7 @@ function openToppingsDetails() {
                 { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
             );
         }, 10);
+        pushNavigationState('toppingsDetailsScreen');
     }
 }
 
@@ -855,13 +882,7 @@ if (toppingsCard) {
 
 if (backToMenuBtnToppings) {
     backToMenuBtnToppings.addEventListener('click', () => {
-        if (toppingsDetailsScreen) {
-            toppingsDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => {
-                toppingsDetailsScreen.style.display = 'none';
-            }, 400);
-        }
+        closeScreenWithHistory(toppingsDetailsScreen);
     });
 }
 
@@ -886,6 +907,7 @@ function openHotBeveragesDetails() {
                 { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
             );
         }, 10);
+        pushNavigationState('hotBeveragesDetailsScreen');
     }
 }
 
@@ -898,13 +920,7 @@ if (hotBeveragesCard) {
 
 if (backToMenuBtnHotBeverages) {
     backToMenuBtnHotBeverages.addEventListener('click', () => {
-        if (hotBeveragesDetailsScreen) {
-            hotBeveragesDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => {
-                hotBeveragesDetailsScreen.style.display = 'none';
-            }, 400);
-        }
+        closeScreenWithHistory(hotBeveragesDetailsScreen);
     });
 }
 
@@ -929,6 +945,7 @@ function openColdCoffeeDetails() {
                 { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
             );
         }, 10);
+        pushNavigationState('coldCoffeeDetailsScreen');
     }
 }
 
@@ -941,13 +958,7 @@ if (coldCoffeeCard) {
 
 if (backToMenuBtnColdCoffee) {
     backToMenuBtnColdCoffee.addEventListener('click', () => {
-        if (coldCoffeeDetailsScreen) {
-            coldCoffeeDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => {
-                coldCoffeeDetailsScreen.style.display = 'none';
-            }, 400);
-        }
+        closeScreenWithHistory(coldCoffeeDetailsScreen);
     });
 }
 
@@ -972,6 +983,7 @@ function openIceCreamDetails() {
                 { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
             );
         }, 10);
+        pushNavigationState('iceCreamDetailsScreen');
     }
 }
 
@@ -984,13 +996,7 @@ if (iceCreamCard) {
 
 if (backToMenuBtnIceCream) {
     backToMenuBtnIceCream.addEventListener('click', () => {
-        if (iceCreamDetailsScreen) {
-            iceCreamDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => {
-                iceCreamDetailsScreen.style.display = 'none';
-            }, 400);
-        }
+        closeScreenWithHistory(iceCreamDetailsScreen);
     });
 }
 
@@ -1015,6 +1021,7 @@ function openMocktailsDetails() {
                 { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
             );
         }, 10);
+        pushNavigationState('mocktailsDetailsScreen');
     }
 }
 
@@ -1027,13 +1034,7 @@ if (mocktailsCard) {
 
 if (backToMenuBtnMocktails) {
     backToMenuBtnMocktails.addEventListener('click', () => {
-        if (mocktailsDetailsScreen) {
-            mocktailsDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => {
-                mocktailsDetailsScreen.style.display = 'none';
-            }, 400);
-        }
+        closeScreenWithHistory(mocktailsDetailsScreen);
     });
 }
 
@@ -1058,6 +1059,7 @@ function openMojitoDetails() {
                 { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
             );
         }, 10);
+        pushNavigationState('mojitoDetailsScreen');
     }
 }
 
@@ -1070,13 +1072,7 @@ if (mojitoCard) {
 
 if (backToMenuBtnMojito) {
     backToMenuBtnMojito.addEventListener('click', () => {
-        if (mojitoDetailsScreen) {
-            mojitoDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => {
-                mojitoDetailsScreen.style.display = 'none';
-            }, 400);
-        }
+        closeScreenWithHistory(mojitoDetailsScreen);
     });
 }
 
@@ -1101,6 +1097,7 @@ function openSmoothiesDetails() {
                 { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
             );
         }, 10);
+        pushNavigationState('smoothiesDetailsScreen');
     }
 }
 
@@ -1113,13 +1110,7 @@ if (smoothiesCard) {
 
 if (backToMenuBtnSmoothies) {
     backToMenuBtnSmoothies.addEventListener('click', () => {
-        if (smoothiesDetailsScreen) {
-            smoothiesDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => {
-                smoothiesDetailsScreen.style.display = 'none';
-            }, 400);
-        }
+        closeScreenWithHistory(smoothiesDetailsScreen);
     });
 }
 
@@ -1144,6 +1135,7 @@ function openIceShakesDetails() {
                 { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
             );
         }, 10);
+        pushNavigationState('iceShakesDetailsScreen');
     }
 }
 
@@ -1156,13 +1148,7 @@ if (iceShakesCard) {
 
 if (backToMenuBtnIceShakes) {
     backToMenuBtnIceShakes.addEventListener('click', () => {
-        if (iceShakesDetailsScreen) {
-            iceShakesDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => {
-                iceShakesDetailsScreen.style.display = 'none';
-            }, 400);
-        }
+        closeScreenWithHistory(iceShakesDetailsScreen);
     });
 }
 
@@ -1187,6 +1173,7 @@ function openMilkShakesDetails() {
                 { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
             );
         }, 10);
+        pushNavigationState('milkShakesDetailsScreen');
     }
 }
 
@@ -1199,13 +1186,7 @@ if (milkShakesCard) {
 
 if (backToMenuBtnMilkShakes) {
     backToMenuBtnMilkShakes.addEventListener('click', () => {
-        if (milkShakesDetailsScreen) {
-            milkShakesDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => {
-                milkShakesDetailsScreen.style.display = 'none';
-            }, 400);
-        }
+        closeScreenWithHistory(milkShakesDetailsScreen);
     });
 }
 
@@ -1230,6 +1211,7 @@ function openSoftDrinksDetails() {
                 { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
             );
         }, 10);
+        pushNavigationState('softDrinksDetailsScreen');
     }
 }
 
@@ -1242,112 +1224,17 @@ if (softDrinksCard) {
 
 if (backToMenuBtnSoftDrinks) {
     backToMenuBtnSoftDrinks.addEventListener('click', () => {
-        if (softDrinksDetailsScreen) {
-            softDrinksDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => {
-                softDrinksDetailsScreen.style.display = 'none';
-            }, 400);
-        }
+        closeScreenWithHistory(softDrinksDetailsScreen);
     });
 }
 
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-        if (pizzaDetailsScreen && pizzaDetailsScreen.classList.contains('active')) {
-            pizzaDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => { pizzaDetailsScreen.style.display = 'none'; }, 400);
-        }
-        if (steakDetailsScreen && steakDetailsScreen.classList.contains('active')) {
-            steakDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => { steakDetailsScreen.style.display = 'none'; }, 400);
-        }
-        if (burgerDetailsScreen && burgerDetailsScreen.classList.contains('active')) {
-            burgerDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => { burgerDetailsScreen.style.display = 'none'; }, 400);
-        }
-        if (brostDetailsScreen && brostDetailsScreen.classList.contains('active')) {
-            brostDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => { brostDetailsScreen.style.display = 'none'; }, 400);
-        }
-        if (pastaDetailsScreen && pastaDetailsScreen.classList.contains('active')) {
-            pastaDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => { pastaDetailsScreen.style.display = 'none'; }, 400);
-        }
-        if (paniniDetailsScreen && paniniDetailsScreen.classList.contains('active')) {
-            paniniDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => { paniniDetailsScreen.style.display = 'none'; }, 400);
-        }
-        if (appetizerDetailsScreen && appetizerDetailsScreen.classList.contains('active')) {
-            appetizerDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => { appetizerDetailsScreen.style.display = 'none'; }, 400);
-        }
-        if (friesDetailsScreen && friesDetailsScreen.classList.contains('active')) {
-            friesDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => { friesDetailsScreen.style.display = 'none'; }, 400);
-        }
-        if (beveragesDetailsScreen && beveragesDetailsScreen.classList.contains('active')) {
-            beveragesDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => { beveragesDetailsScreen.style.display = 'none'; }, 400);
-        }
-        if (toppingsDetailsScreen && toppingsDetailsScreen.classList.contains('active')) {
-            toppingsDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => { toppingsDetailsScreen.style.display = 'none'; }, 400);
-        }
-        if (hotBeveragesDetailsScreen && hotBeveragesDetailsScreen.classList.contains('active')) {
-            hotBeveragesDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => { hotBeveragesDetailsScreen.style.display = 'none'; }, 400);
-        }
-        if (coldCoffeeDetailsScreen && coldCoffeeDetailsScreen.classList.contains('active')) {
-            coldCoffeeDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => { coldCoffeeDetailsScreen.style.display = 'none'; }, 400);
-        }
-        if (iceCreamDetailsScreen && iceCreamDetailsScreen.classList.contains('active')) {
-            iceCreamDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => { iceCreamDetailsScreen.style.display = 'none'; }, 400);
-        }
-        if (mocktailsDetailsScreen && mocktailsDetailsScreen.classList.contains('active')) {
-            mocktailsDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => { mocktailsDetailsScreen.style.display = 'none'; }, 400);
-        }
-        if (mojitoDetailsScreen && mojitoDetailsScreen.classList.contains('active')) {
-            mojitoDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => { mojitoDetailsScreen.style.display = 'none'; }, 400);
-        }
-        if (smoothiesDetailsScreen && smoothiesDetailsScreen.classList.contains('active')) {
-            smoothiesDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => { smoothiesDetailsScreen.style.display = 'none'; }, 400);
-        }
-        if (iceShakesDetailsScreen && iceShakesDetailsScreen.classList.contains('active')) {
-            iceShakesDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => { iceShakesDetailsScreen.style.display = 'none'; }, 400);
-        }
-        if (milkShakesDetailsScreen && milkShakesDetailsScreen.classList.contains('active')) {
-            milkShakesDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => { milkShakesDetailsScreen.style.display = 'none'; }, 400);
-        }
-        if (softDrinksDetailsScreen && softDrinksDetailsScreen.classList.contains('active')) {
-            softDrinksDetailsScreen.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => { softDrinksDetailsScreen.style.display = 'none'; }, 400);
+        const activeScreen = document.querySelector('[id$="DetailsScreen"].active');
+        if (activeScreen) {
+            closeScreenWithHistory(activeScreen);
+        } else {
+            closeActiveScreens();
         }
     }
 });
