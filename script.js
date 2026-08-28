@@ -620,6 +620,106 @@ if (backToMenuBtnPasta) {
     });
 }
 
+// Dedicated Full Screen Panini View Navigation Handler
+const paniniDetailsScreen = document.getElementById('paniniDetailsScreen');
+const backToMenuBtnPanini = document.getElementById('backToMenuBtnPanini');
+const paniniCard = document.querySelector('.dish-card-3d[data-category="panini"]');
+
+function openPaniniDetails() {
+    if (paniniDetailsScreen) {
+        paniniDetailsScreen.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+            paniniDetailsScreen.classList.add('active');
+            // GSAP stagger-in transitions
+            gsap.fromTo('#paniniDetailsScreen .burger-menu-card', 
+                { opacity: 0, y: 30 }, 
+                { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', delay: 0.1 }
+            );
+            gsap.fromTo('#paniniDetailsScreen .burger-item-row', 
+                { opacity: 0, y: 15 }, 
+                { opacity: 1, y: 0, duration: 0.4, stagger: 0.05, ease: 'power2.out', delay: 0.3 }
+            );
+            gsap.fromTo('#paniniDetailsScreen .extra-beef-card', 
+                { opacity: 0, y: 20 }, 
+                { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', delay: 0.5 }
+            );
+            gsap.fromTo('#paniniDetailsScreen .floating-ingredient',
+                { opacity: 0, scale: 0.5 },
+                { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
+            );
+        }, 10);
+    }
+}
+
+if (paniniCard) {
+    const paniniCta = paniniCard.querySelector('.dish-cta');
+    if (paniniCta) {
+        paniniCta.addEventListener('click', (e) => {
+            e.preventDefault();
+            openPaniniDetails();
+        });
+    }
+}
+
+if (backToMenuBtnPanini) {
+    backToMenuBtnPanini.addEventListener('click', () => {
+        if (paniniDetailsScreen) {
+            paniniDetailsScreen.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                paniniDetailsScreen.style.display = 'none';
+            }, 400);
+        }
+    });
+}
+
+// Dedicated Full Screen Appetizers View Navigation Handler
+const appetizerDetailsScreen = document.getElementById('appetizerDetailsScreen');
+const backToMenuBtnAppetizer = document.getElementById('backToMenuBtnAppetizer');
+const appetizerCard = document.querySelector('.dish-card-3d[data-category="appetizer"]');
+
+function openAppetizerDetails() {
+    if (appetizerDetailsScreen) {
+        appetizerDetailsScreen.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+            appetizerDetailsScreen.classList.add('active');
+            // GSAP stagger-in transitions
+            gsap.fromTo('#appetizerDetailsScreen .pasta-detail-card', 
+                { opacity: 0, y: 35 }, 
+                { opacity: 1, y: 0, duration: 0.6, stagger: 0.15, ease: 'power2.out', delay: 0.1 }
+            );
+            gsap.fromTo('#appetizerDetailsScreen .floating-ingredient',
+                { opacity: 0, scale: 0.5 },
+                { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
+            );
+        }, 10);
+    }
+}
+
+if (appetizerCard) {
+    const appetizerCta = appetizerCard.querySelector('.dish-cta');
+    if (appetizerCta) {
+        appetizerCta.addEventListener('click', (e) => {
+            e.preventDefault();
+            openAppetizerDetails();
+        });
+    }
+}
+
+if (backToMenuBtnAppetizer) {
+    backToMenuBtnAppetizer.addEventListener('click', () => {
+        if (appetizerDetailsScreen) {
+            appetizerDetailsScreen.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                appetizerDetailsScreen.style.display = 'none';
+            }, 400);
+        }
+    });
+}
+
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         if (pizzaDetailsScreen && pizzaDetailsScreen.classList.contains('active')) {
@@ -646,6 +746,16 @@ document.addEventListener('keydown', (e) => {
             pastaDetailsScreen.classList.remove('active');
             document.body.style.overflow = '';
             setTimeout(() => { pastaDetailsScreen.style.display = 'none'; }, 400);
+        }
+        if (paniniDetailsScreen && paniniDetailsScreen.classList.contains('active')) {
+            paniniDetailsScreen.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => { paniniDetailsScreen.style.display = 'none'; }, 400);
+        }
+        if (appetizerDetailsScreen && appetizerDetailsScreen.classList.contains('active')) {
+            appetizerDetailsScreen.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => { appetizerDetailsScreen.style.display = 'none'; }, 400);
         }
     }
 });

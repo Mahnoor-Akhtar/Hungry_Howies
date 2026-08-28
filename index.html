@@ -1308,6 +1308,270 @@
         </div>
     </div>
 
+    <!-- Dedicated Full Screen Panini View -->
+    <div class="panini-full-screen" id="paniniDetailsScreen" style="display: none;">
+        <!-- Floating Decorative Ingredients -->
+        <div class="floating-ingredients-container">
+            <!-- Melted cheese -->
+            <div class="floating-ingredient panini-cheese">
+                <svg viewBox="0 0 100 100" width="70" height="70">
+                    <rect x="25" y="25" width="50" height="50" rx="5" fill="#FDD835" opacity="0.15" transform="rotate(15 50 50)"/>
+                    <rect x="25" y="25" width="50" height="50" rx="5" fill="none" stroke="#F57F17" stroke-width="1.5" transform="rotate(15 50 50)"/>
+                    <circle cx="45" cy="40" r="3" fill="#F57F17"/>
+                    <circle cx="58" cy="52" r="4.5" fill="#F57F17"/>
+                </svg>
+            </div>
+            <!-- Toasted bread -->
+            <div class="floating-ingredient panini-bread">
+                <svg viewBox="0 0 100 100" width="60" height="60">
+                    <path d="M20 30 C20 20, 80 20, 80 30 L80 80 C80 85, 20 85, 20 80 Z" fill="#FB8C00" opacity="0.12"/>
+                    <path d="M20 30 C20 20, 80 20, 80 30 L80 80 C80 85, 20 85, 20 80" fill="none" stroke="#EF6C00" stroke-width="1.5"/>
+                    <line x1="30" y1="40" x2="70" y2="40" stroke="#EF6C00" stroke-width="1" stroke-dasharray="3 3"/>
+                </svg>
+            </div>
+            <!-- Lettuce -->
+            <div class="floating-ingredient panini-lettuce">
+                <svg viewBox="0 0 100 100" width="65" height="65">
+                    <path d="M50 15 C35 15, 20 28, 20 45 C20 62, 35 75, 50 75 C65 75, 80 62, 80 45 C80 28, 65 15, 50 15 Z" fill="#4CAF50" opacity="0.12"/>
+                </svg>
+            </div>
+            <!-- Tomatoes -->
+            <div class="floating-ingredient panini-tomato">
+                <svg viewBox="0 0 100 100" width="55" height="55">
+                    <circle cx="50" cy="50" r="30" fill="#E53935" opacity="0.12"/>
+                    <circle cx="50" cy="50" r="30" fill="none" stroke="#C62828" stroke-width="2"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="burger-screen-top-bar">
+            <button class="back-to-menu-btn" id="backToMenuBtnPanini">
+                <i class="fas fa-arrow-left"></i> Back to Menu
+            </button>
+            <div class="screen-brand">
+                <img src="assets/images/logo.png" alt="HungryHowies" class="screen-logo">
+            </div>
+        </div>
+
+        <div class="burger-screen-content container">
+            <!-- Header Section with Panini Hero Layout -->
+            <div class="burger-header-grid">
+                <div class="burger-header-text">
+                    <div class="burger-cloche-icon">
+                        <span class="flourish-line"></span>
+                        <i class="fas fa-bread-slice red-cloche"></i>
+                        <span class="flourish-line"></span>
+                    </div>
+                    <h2 class="burger-title">
+                        <span class="title-dark">OUR PANINI</span><br>
+                        <span class="title-red">SELECTION</span>
+                    </h2>
+                    <div class="star-flourish">
+                        <span class="star-line"></span>
+                        <span class="stars">★ ★ ★ ★ ★</span>
+                        <span class="star-line"></span>
+                    </div>
+                    <p class="burger-subtitle">Freshly grilled panini sandwiches packed with premium ingredients, melted cheese, signature sauces, and authentic flavors.</p>
+                </div>
+                <div class="burger-header-image">
+                    <img src="assets/images/panini_hero.jpg" alt="Panini Selection" class="burger-hero-img">
+                </div>
+            </div>
+
+            <!-- Double Column Layout: Items & served with side details -->
+            <div class="burger-sections-grid">
+                <!-- Panini Menu Card list -->
+                <div class="burger-category-column">
+                    <div class="burger-menu-card beef-card">
+                        <div class="burger-table-header beef-header">
+                            <span><i class="fas fa-hotdog red-glow-icon"></i> PANINI SANDWICHES</span>
+                            <span>Price</span>
+                        </div>
+                        <div class="burger-table-body">
+                            <div class="burger-item-row" style="flex-direction: column; align-items: flex-start; gap: 4px;">
+                                <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+                                    <div class="item-name" style="font-size: 1.05rem;"><span class="red-dot"></span> Chessey Panini</div>
+                                    <div class="item-price-badge">Rs/-1099</div>
+                                </div>
+                                <div style="font-size: 0.8rem; color: #777777; padding-left: 20px;">Loaded with melted cheese, fresh vegetables, and toasted artisan bread.</div>
+                            </div>
+                            <div class="burger-item-row" style="flex-direction: column; align-items: flex-start; gap: 4px;">
+                                <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+                                    <div class="item-name" style="font-size: 1.05rem;"><span class="red-dot"></span> Hungry Club</div>
+                                    <div class="item-price-badge">Rs/-849</div>
+                                </div>
+                                <div style="font-size: 0.8rem; color: #777777; padding-left: 20px;">A classic club-style panini filled with premium ingredients and signature sauces.</div>
+                            </div>
+                            <div class="burger-item-row" style="flex-direction: column; align-items: flex-start; gap: 4px;">
+                                <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+                                    <div class="item-name" style="font-size: 1.05rem;"><span class="red-dot"></span> Special BBQ</div>
+                                    <div class="item-price-badge">Rs/-849</div>
+                                </div>
+                                <div style="font-size: 0.8rem; color: #777777; padding-left: 20px;">Smoky BBQ flavor combined with grilled fillings and perfectly toasted bread.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Highlighted Served With Card -->
+                <div class="burger-category-column">
+                    <div class="extra-beef-card">
+                        <div class="extra-beef-header">
+                            <span class="extra-badge-premium"><i class="fas fa-utensils"></i> COMPLIMENTARY</span>
+                            <h4>SERVED WITH EVERY ORDER</h4>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+                            <div class="info-addon-card" style="margin: 0; padding: 12px 20px;">
+                                <div class="addon-icon-circle" style="width: 38px; height: 38px; font-size: 0.95rem;">
+                                    <i class="fas fa-cheese"></i>
+                                </div>
+                                <div class="addon-text">
+                                    <span class="addon-label">FRIES</span>
+                                    <span class="addon-value" style="font-size: 0.82rem; color: #666666;">Golden crispy potato fries.</span>
+                                </div>
+                            </div>
+                            <div class="info-addon-card" style="margin: 0; padding: 12px 20px;">
+                                <div class="addon-icon-circle" style="width: 38px; height: 38px; font-size: 0.95rem;">
+                                    <i class="fas fa-seedling"></i>
+                                </div>
+                                <div class="addon-text">
+                                    <span class="addon-label">COLESLAW</span>
+                                    <span class="addon-value" style="font-size: 0.82rem; color: #666666;">Creamy coleslaw prepared daily.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dedicated Full Screen Appetizers View -->
+    <div class="appetizer-full-screen" id="appetizerDetailsScreen" style="display: none;">
+        <!-- Floating Decorative Ingredients -->
+        <div class="floating-ingredients-container">
+            <!-- Crispy Wing SVG -->
+            <div class="floating-ingredient appetizer-wing">
+                <svg viewBox="0 0 100 100" width="70" height="70">
+                    <path d="M20 50 C20 30, 80 30, 80 50 Z" fill="#D84315" opacity="0.12"/>
+                    <path d="M20 50 C20 30, 80 30, 80 50" fill="none" stroke="#BF360C" stroke-width="1.5"/>
+                </svg>
+            </div>
+            <!-- Fry SVG -->
+            <div class="floating-ingredient appetizer-fry">
+                <svg viewBox="0 0 100 100" width="55" height="55">
+                    <rect x="35" y="15" width="12" height="70" rx="3" fill="#FDD835" opacity="0.15" transform="rotate(35 41 50)"/>
+                    <rect x="35" y="15" width="12" height="70" rx="3" fill="none" stroke="#F57F17" stroke-width="1.5" transform="rotate(35 41 50)"/>
+                </svg>
+            </div>
+            <!-- Chili Pepper SVG -->
+            <div class="floating-ingredient appetizer-chili">
+                <svg viewBox="0 0 100 100" width="60" height="60">
+                    <path d="M30 30 Q50 60 70 70" fill="none" stroke="#E53935" stroke-width="4" opacity="0.15"/>
+                    <path d="M30 30 Q50 60 70 70" fill="none" stroke="#E53935" stroke-width="2"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="burger-screen-top-bar">
+            <button class="back-to-menu-btn" id="backToMenuBtnAppetizer">
+                <i class="fas fa-arrow-left"></i> Back to Menu
+            </button>
+            <div class="screen-brand">
+                <img src="assets/images/logo.png" alt="HungryHowies" class="screen-logo">
+            </div>
+        </div>
+
+        <div class="burger-screen-content container">
+            <!-- Header Section with Appetizers Hero Layout -->
+            <div class="burger-header-grid">
+                <div class="burger-header-text">
+                    <div class="burger-cloche-icon">
+                        <span class="flourish-line"></span>
+                        <i class="fas fa-drumstick-bite red-cloche"></i>
+                        <span class="flourish-line"></span>
+                    </div>
+                    <h2 class="burger-title">
+                        <span class="title-dark">OUR APPETIZER</span><br>
+                        <span class="title-red">SELECTION</span>
+                    </h2>
+                    <div class="star-flourish">
+                        <span class="star-line"></span>
+                        <span class="stars">★ ★ ★ ★ ★</span>
+                        <span class="star-line"></span>
+                    </div>
+                    <p class="burger-subtitle">Perfect starters made with crispy coatings, bold flavors, premium seasonings, and delicious dipping sauces.</p>
+                </div>
+                <div class="burger-header-image">
+                    <img src="assets/images/appetizer_hero.jpg" alt="Appetizer Selection" class="burger-hero-img">
+                </div>
+            </div>
+
+            <!-- Appetizers Grid of Cards -->
+            <div class="pasta-cards-grid">
+                <!-- 1. Nuggets -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/appetizer_hero.jpg" alt="Nuggets with Fries" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-399</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Nuggets (with Fries) - 6pcs</h4>
+                        <p>Golden crispy chicken nuggets served with fresh fries and signature dipping sauce.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium"><i class="fas fa-child"></i> Kids Favorite</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Crispy Wings -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/appetizer_hero.jpg" alt="Crispy Wings" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-399</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Crispy Wings - 6pcs</h4>
+                        <p>Crunchy chicken wings seasoned and fried to perfection.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium signature"><i class="fas fa-fire-alt"></i> Crispy Classic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Peri-Peri Wings -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/appetizer_hero.jpg" alt="Peri-Peri Wings" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-499</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Peri-Peri Wings - 6pcs</h4>
+                        <p>Spicy peri-peri flavored wings with a bold and zesty taste.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium spicy"><i class="fas fa-pepper-hot"></i> Zesty & Spicy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Honey BBQ Wings -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/appetizer_hero.jpg" alt="Honey BBQ Wings" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-499</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Honey BBQ Wings - 6pcs</h4>
+                        <p>Sweet and smoky BBQ wings glazed with rich honey sauce.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium signature"><i class="fas fa-award"></i> Honey Glazed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 

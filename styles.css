@@ -2869,5 +2869,96 @@ body {
     color: #EF6C00;
 }
 
+/* ==========================================================================
+   Dedicated Premium Panini View Styling (Modern Red & White Theme)
+   ========================================================================== */
+.panini-full-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #FFFFFF;
+    color: #1A1A1A;
+    z-index: 99999;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.panini-full-screen.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Positioning & Floating Animations for Panini Background Elements */
+.panini-cheese {
+    top: 15%;
+    left: 5%;
+    animation: float-drift-1 11s ease-in-out infinite;
+}
+
+.panini-bread {
+    top: 25%;
+    right: 6%;
+    animation: float-drift-2 13s ease-in-out infinite 0.5s;
+}
+
+.panini-lettuce {
+    bottom: 27%;
+    left: 4%;
+    animation: float-drift-1 12s ease-in-out infinite 1s;
+}
+
+.panini-tomato {
+    bottom: 16%;
+    right: 5%;
+    animation: float-drift-2 10s ease-in-out infinite 1.5s;
+}
+
+/* ==========================================================================
+   Dedicated Premium Appetizer View Styling (Modern Red & White Theme)
+   ========================================================================== */
+.appetizer-full-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #FFFFFF;
+    color: #1A1A1A;
+    z-index: 99999;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.appetizer-full-screen.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Positioning & Floating Animations for Appetizer Background Elements */
+.appetizer-wing {
+    top: 14%;
+    left: 6%;
+    animation: float-drift-1 14s ease-in-out infinite;
+}
+
+.appetizer-fry {
+    top: 26%;
+    right: 7%;
+    animation: float-drift-2 11s ease-in-out infinite 0.5s;
+}
+
+.appetizer-chili {
+    bottom: 25%;
+    left: 5%;
+    animation: float-drift-1 12s ease-in-out infinite 1.5s;
+}
+
+
 
 
