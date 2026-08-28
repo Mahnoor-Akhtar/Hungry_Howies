@@ -141,57 +141,292 @@
     <!-- Featured Dishes with 3D Effects -->
     <section class="featured-dishes" id="menu">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Signature Creations</h2>
-                <p class="section-subtitle">Each dish tells a story of passion and precision</p>
+            <div class="section-header menu-header">
+                <div class="menu-badge-wrapper">
+                    <span class="menu-badge"><i class="fas fa-utensils"></i> EXQUISITE CULINARY SELECTION</span>
+                </div>
+                <h2 class="menu-grand-title"><span class="title-dark">OUR</span> <span class="title-red">MENU</span></h2>
+                <p class="section-subtitle">Crafted with passion, served with perfection — explore our signature creations</p>
+                <div class="menu-title-divider">
+                    <span class="divider-line"></span>
+                    <span class="divider-icon">✦</span>
+                    <span class="divider-line"></span>
+                </div>
             </div>
+
+            <!-- Exact Match Search & Dropdown Control Bar -->
+            <div class="menu-search-control-pill">
+                <div class="search-input-wrapper">
+                    <i class="fas fa-search search-icon-red"></i>
+                    <input type="text" id="menuSearchInput" placeholder="Search delicious dishes..." autocomplete="off">
+                    <button type="button" id="clearSearchBtn" class="clear-search-btn" style="display: none;">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="control-divider"></div>
+                <div class="custom-dropdown-wrapper" id="customDropdownWrapper">
+                    <div class="custom-dropdown-trigger" id="customDropdownTrigger">
+                        <i class="fas fa-th-large dropdown-grid-icon"></i>
+                        <span id="selectedCategoryText">All Categories</span>
+                        <i class="fas fa-chevron-down dropdown-arrow-red"></i>
+                    </div>
+                    <div class="custom-dropdown-panel" id="customDropdownPanel">
+                        <div class="custom-dropdown-item active" data-value="all"><i class="fas fa-th-large"></i> All Categories</div>
+                        <div class="custom-dropdown-item" data-value="pasta"><i class="fas fa-utensils"></i> Pasta</div>
+                        <div class="custom-dropdown-item" data-value="panini"><i class="fas fa-bread-slice"></i> Panini</div>
+                        <div class="custom-dropdown-item" data-value="appetizer"><i class="fas fa-concierge-bell"></i> Appetizer</div>
+                        <div class="custom-dropdown-item" data-value="fries"><i class="fas fa-box-tissue"></i> Fries</div>
+                        <div class="custom-dropdown-item" data-value="beverages"><i class="fas fa-glass-cheers"></i> Beverages</div>
+                        <div class="custom-dropdown-item" data-value="extra-topping"><i class="fas fa-cheese"></i> Extra Topping</div>
+                        <div class="custom-dropdown-item" data-value="hot-beverages"><i class="fas fa-coffee"></i> Hot Beverages</div>
+                        <div class="custom-dropdown-item" data-value="cold-coffee"><i class="fas fa-mug-hot"></i> Cold Coffee</div>
+                        <div class="custom-dropdown-item" data-value="ice-cream"><i class="fas fa-ice-cream"></i> Ice Cream</div>
+                        <div class="custom-dropdown-item" data-value="mocktails"><i class="fas fa-cocktail"></i> Mocktails</div>
+                        <div class="custom-dropdown-item" data-value="mojito"><i class="fas fa-glass-whiskey"></i> Mojito</div>
+                        <div class="custom-dropdown-item" data-value="smoothies"><i class="fas fa-blender"></i> Smoothies</div>
+                        <div class="custom-dropdown-item" data-value="ice-shakes"><i class="fas fa-glass-martini-alt"></i> Ice Shakes</div>
+                        <div class="custom-dropdown-item" data-value="milk-shakes"><i class="fas fa-glass-cheers"></i> Milk Shakes</div>
+                        <div class="custom-dropdown-item" data-value="soft-drinks"><i class="fas fa-wine-bottle"></i> Soft Drinks</div>
+                        <div class="custom-dropdown-item" data-value="pizza"><i class="fas fa-pizza-slice"></i> Pizza</div>
+                        <div class="custom-dropdown-item" data-value="chicken-steak"><i class="fas fa-drumstick-bite"></i> Chicken Steak</div>
+                        <div class="custom-dropdown-item" data-value="burger"><i class="fas fa-hamburger"></i> Burger</div>
+                        <div class="custom-dropdown-item" data-value="dajjaj-brost"><i class="fas fa-drumstick-bite"></i> Dajjaj Brost</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="noResultsMsg" class="no-results-msg" style="display: none;">
+                <i class="fas fa-utensils"></i>
+                <p>No menu items found matching your search.</p>
+                <button type="button" id="resetSearchBtn" class="reset-search-btn">Reset Search</button>
+            </div>
+
             <div class="dishes-showcase">
-                <div class="dish-card-3d">
+                <!-- 1. Pizza -->
+                <div class="dish-card-3d" data-category="pizza">
                     <div class="dish-image-container">
-                        <img src="assets/images/spicy.webp" alt="Royal Spice Infusion">
+                        <img src="assets/images/food.webp" alt="Pizza">
                         <div class="dish-glow"></div>
                     </div>
                     <div class="dish-content">
-                        <div class="dish-rating">
-                            <div class="stars">★★★★★</div>
-                        </div>
-                        <h3>Royal Spice Infusion</h3>
-                        <p>Tender medallions seasoned with a blend of exotic crushed spices, fresh scallions, and chili
-                            oil</p>
-                        <div class="dish-price">$125</div>
-                        <button class="dish-cta">Experience This</button>
+                        <h3>Pizza</h3>
+                        <button class="dish-cta">View all</button>
                     </div>
                 </div>
-                <div class="dish-card-3d">
+
+                <!-- 2. Chicken Steak -->
+                <div class="dish-card-3d" data-category="chicken-steak">
                     <div class="dish-image-container">
-                        <img src="assets/images/biryani.jpg" alt="Royal Biryani">
+                        <img src="assets/images/spicy.webp" alt="Chicken Steak">
                         <div class="dish-glow"></div>
                     </div>
                     <div class="dish-content">
-                        <div class="dish-rating">
-                            <div class="stars">★★★★★</div>
-                        </div>
-                        <h3>Royal Biryani</h3>
-                        <p>Fragrant basmati rice layered with succulent chicken, aromatic herbs, and saffron in a copper
-                            bowl</p>
-                        <div class="dish-price">$89</div>
-                        <button class="dish-cta">Experience This</button>
+                        <h3>Chicken Steak</h3>
+                        <button class="dish-cta">View all</button>
                     </div>
                 </div>
-                <div class="dish-card-3d">
+
+                <!-- 3. Burger -->
+                <div class="dish-card-3d" data-category="burger">
                     <div class="dish-image-container">
-                        <img src="assets/images/pasta.webp" alt="Garden Penne">
+                        <img src="assets/images/burger.webp" alt="Burger">
                         <div class="dish-glow"></div>
                     </div>
                     <div class="dish-content">
-                        <div class="dish-rating">
-                            <div class="stars">★★★★★</div>
-                        </div>
-                        <h3>Garden Penne</h3>
-                        <p>Artisan penne pasta tossed in a rich, creamy sauce with roasted zucchini, bell peppers, and
-                            fresh herbs</p>
-                        <div class="dish-price">$67</div>
-                        <button class="dish-cta">Experience This</button>
+                        <h3>Burger</h3>
+                        <button class="dish-cta">View all</button>
+                    </div>
+                </div>
+
+                <!-- 5. Dajjaj Brost -->
+                <div class="dish-card-3d" data-category="dajjaj-brost">
+                    <div class="dish-image-container">
+                        <img src="assets/images/legs.webp" alt="Dajjaj Brost">
+                        <div class="dish-glow"></div>
+                    </div>
+                    <div class="dish-content">
+                        <h3>Dajjaj Brost</h3>
+                        <button class="dish-cta">View all</button>
+                    </div>
+                </div>
+
+                <!-- 6. Pasta -->
+                <div class="dish-card-3d" data-category="pasta">
+                    <div class="dish-image-container">
+                        <img src="assets/images/pasta.webp" alt="Pasta">
+                        <div class="dish-glow"></div>
+                    </div>
+                    <div class="dish-content">
+                        <h3>Pasta</h3>
+                        <button class="dish-cta">View all</button>
+                    </div>
+                </div>
+
+                <!-- 7. Panini -->
+                <div class="dish-card-3d" data-category="panini">
+                    <div class="dish-image-container">
+                        <img src="assets/images/food.webp" alt="Panini">
+                        <div class="dish-glow"></div>
+                    </div>
+                    <div class="dish-content">
+                        <h3>Panini</h3>
+                        <button class="dish-cta">View all</button>
+                    </div>
+                </div>
+
+                <!-- 8. Appetizer -->
+                <div class="dish-card-3d" data-category="appetizer">
+                    <div class="dish-image-container">
+                        <img src="assets/images/appetizer.webp" alt="Appetizer">
+                        <div class="dish-glow"></div>
+                    </div>
+                    <div class="dish-content">
+                        <h3>Appetizer</h3>
+                        <button class="dish-cta">View all</button>
+                    </div>
+                </div>
+
+                <!-- 9. Fries -->
+                <div class="dish-card-3d" data-category="fries">
+                    <div class="dish-image-container">
+                        <img src="assets/images/appetizer.webp" alt="Fries">
+                        <div class="dish-glow"></div>
+                    </div>
+                    <div class="dish-content">
+                        <h3>Fries</h3>
+                        <button class="dish-cta">View all</button>
+                    </div>
+                </div>
+
+                <!-- 10. Beverages -->
+                <div class="dish-card-3d" data-category="beverages">
+                    <div class="dish-image-container">
+                        <img src="assets/images/ice%20shake.webp" alt="Beverages">
+                        <div class="dish-glow"></div>
+                    </div>
+                    <div class="dish-content">
+                        <h3>Beverages</h3>
+                        <button class="dish-cta">View all</button>
+                    </div>
+                </div>
+
+                <!-- 11. Extra Topping -->
+                <div class="dish-card-3d" data-category="extra-topping">
+                    <div class="dish-image-container">
+                        <img src="assets/images/spicy.webp" alt="Extra Topping">
+                        <div class="dish-glow"></div>
+                    </div>
+                    <div class="dish-content">
+                        <h3>Extra Topping</h3>
+                        <button class="dish-cta">View all</button>
+                    </div>
+                </div>
+
+                <!-- 12. Hot Beverages -->
+                <div class="dish-card-3d" data-category="hot-beverages">
+                    <div class="dish-image-container">
+                        <img src="assets/images/food.webp" alt="Hot Beverages">
+                        <div class="dish-glow"></div>
+                    </div>
+                    <div class="dish-content">
+                        <h3>Hot Beverages</h3>
+                        <button class="dish-cta">View all</button>
+                    </div>
+                </div>
+
+                <!-- 13. Cold Coffee -->
+                <div class="dish-card-3d" data-category="cold-coffee">
+                    <div class="dish-image-container">
+                        <img src="assets/images/ice%20shake.webp" alt="Cold Coffee">
+                        <div class="dish-glow"></div>
+                    </div>
+                    <div class="dish-content">
+                        <h3>Cold Coffee</h3>
+                        <button class="dish-cta">View all</button>
+                    </div>
+                </div>
+
+                <!-- 14. Ice Cream -->
+                <div class="dish-card-3d" data-category="ice-cream">
+                    <div class="dish-image-container">
+                        <img src="assets/images/desert.webp" alt="Ice Cream">
+                        <div class="dish-glow"></div>
+                    </div>
+                    <div class="dish-content">
+                        <h3>Ice Cream</h3>
+                        <button class="dish-cta">View all</button>
+                    </div>
+                </div>
+
+                <!-- 15. Mocktails -->
+                <div class="dish-card-3d" data-category="mocktails">
+                    <div class="dish-image-container">
+                        <img src="assets/images/ice%20shake.webp" alt="Mocktails">
+                        <div class="dish-glow"></div>
+                    </div>
+                    <div class="dish-content">
+                        <h3>Mocktails</h3>
+                        <button class="dish-cta">View all</button>
+                    </div>
+                </div>
+
+                <!-- 16. Mojito -->
+                <div class="dish-card-3d" data-category="mojito">
+                    <div class="dish-image-container">
+                        <img src="assets/images/ice%20shake.webp" alt="Mojito">
+                        <div class="dish-glow"></div>
+                    </div>
+                    <div class="dish-content">
+                        <h3>Mojito</h3>
+                        <button class="dish-cta">View all</button>
+                    </div>
+                </div>
+
+                <!-- 17. Smoothies -->
+                <div class="dish-card-3d" data-category="smoothies">
+                    <div class="dish-image-container">
+                        <img src="assets/images/ice%20shake.webp" alt="Smoothies">
+                        <div class="dish-glow"></div>
+                    </div>
+                    <div class="dish-content">
+                        <h3>Smoothies</h3>
+                        <button class="dish-cta">View all</button>
+                    </div>
+                </div>
+
+                <!-- 18. Ice Shakes -->
+                <div class="dish-card-3d" data-category="ice-shakes">
+                    <div class="dish-image-container">
+                        <img src="assets/images/ice%20shake.webp" alt="Ice Shakes">
+                        <div class="dish-glow"></div>
+                    </div>
+                    <div class="dish-content">
+                        <h3>Ice Shakes</h3>
+                        <button class="dish-cta">View all</button>
+                    </div>
+                </div>
+
+                <!-- 19. Milk Shakes -->
+                <div class="dish-card-3d" data-category="milk-shakes">
+                    <div class="dish-image-container">
+                        <img src="assets/images/ice%20shake.webp" alt="Milk Shakes">
+                        <div class="dish-glow"></div>
+                    </div>
+                    <div class="dish-content">
+                        <h3>Milk Shakes</h3>
+                        <button class="dish-cta">View all</button>
+                    </div>
+                </div>
+
+                <!-- 20. Soft Drinks -->
+                <div class="dish-card-3d" data-category="soft-drinks">
+                    <div class="dish-image-container">
+                        <img src="assets/images/ice%20shake.webp" alt="Soft Drinks">
+                        <div class="dish-glow"></div>
+                    </div>
+                    <div class="dish-content">
+                        <h3>Soft Drinks</h3>
+                        <button class="dish-cta">View all</button>
                     </div>
                 </div>
             </div>
@@ -423,7 +658,655 @@
                 <p>&copy; 2026 HungryHowies. All rights reserved.</p>
             </div>
         </div>
-    </footer>
+    <!-- Dedicated Full Screen Pizza View -->
+    <div class="pizza-full-screen" id="pizzaDetailsScreen" style="display: none;">
+        <div class="pizza-screen-top-bar">
+            <button class="back-to-menu-btn" id="backToMenuBtn">
+                <i class="fas fa-arrow-left"></i> Back to Menu
+            </button>
+            <div class="screen-brand">
+                <img src="assets/images/logo.png" alt="HungryHowies" class="screen-logo">
+            </div>
+        </div>
+
+        <div class="pizza-screen-content container">
+            <div class="pizza-screen-header">
+                <div class="header-flourish">
+                    <span class="flourish-line"></span>
+                    <i class="fas fa-pizza-slice flourish-pizza-icon"></i>
+                    <span class="flourish-line"></span>
+                </div>
+                <h2><span class="title-dark">OUR</span> <span class="title-red">PIZZA SELECTION</span></h2>
+                <p>Crafted with premium ingredients, rich mozzarella & authentic secret spices</p>
+            </div>
+
+            <div class="pizza-cards-grid">
+                
+                <!-- Card 1: Classic Pizza's -->
+                <div class="pizza-detail-card">
+                    <div class="card-red-banner">
+                        <span class="banner-pipe">|</span> Classic Pizza's
+                    </div>
+                    <div class="card-pizza-img">
+                        <img src="assets/images/spicy.webp" alt="Classic Pizza">
+                    </div>
+                    <div class="card-pizza-body">
+                        <div class="pizza-price-table">
+                            <div class="price-th-row">
+                                <div>Small</div>
+                                <div>Medium</div>
+                                <div>Large</div>
+                                <div>Family</div>
+                            </div>
+                            <div class="price-td-row">
+                                <div>Rs/-849</div>
+                                <div>Rs/-1449</div>
+                                <div>Rs/-1749</div>
+                                <div>Rs/-2349</div>
+                            </div>
+                        </div>
+
+                        <div class="flavors-section">
+                            <span class="flavors-heading">FLAVORS:</span>
+                            <div class="flavors-grid-2col">
+                                <div class="flavor-pill"><i class="fas fa-pepper-hot"></i> Fajita Pizza</div>
+                                <div class="flavor-pill"><i class="fas fa-drumstick-bite"></i> Chicken Tikka</div>
+                                <div class="flavor-pill"><i class="fas fa-fire"></i> Malai Boti</div>
+                                <div class="flavor-pill"><i class="fas fa-cheese"></i> Sausage Chesse</div>
+                                <div class="flavor-pill"><i class="fas fa-fire-alt"></i> Hot & Spicy</div>
+                                <div class="flavor-pill"><i class="fas fa-fire"></i> Tandoori Bonfire</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Modren Pizza's -->
+                <div class="pizza-detail-card">
+                    <div class="card-red-banner">
+                        <span class="banner-pipe">|</span> Modren Pizza's
+                    </div>
+                    <div class="card-pizza-img">
+                        <img src="assets/images/food.webp" alt="Modren Pizza">
+                    </div>
+                    <div class="card-pizza-body">
+                        <div class="pizza-price-table">
+                            <div class="price-th-row">
+                                <div>Small</div>
+                                <div>Medium</div>
+                                <div>Large</div>
+                                <div>Family</div>
+                            </div>
+                            <div class="price-td-row">
+                                <div>Rs/-849</div>
+                                <div>Rs/-1549</div>
+                                <div>Rs/-1999</div>
+                                <div>Rs/-2499</div>
+                            </div>
+                        </div>
+
+                        <div class="flavors-section">
+                            <span class="flavors-heading">FLAVORS:</span>
+                            <div class="flavors-grid-2col">
+                                <div class="flavor-pill"><i class="far fa-circle"></i> Ring Pizza</div>
+                                <div class="flavor-pill"><i class="fas fa-crown"></i> Crown Crust</div>
+                                <div class="flavor-pill"><i class="fas fa-pizza-slice"></i> Peperoni Passion</div>
+                                <div class="flavor-pill"><i class="fas fa-utensils"></i> Doner Kebab</div>
+                                <div class="flavor-pill"><i class="fas fa-drumstick-bite"></i> Kebab Stuffer</div>
+                                <div class="flavor-pill"><i class="fas fa-cheese"></i> Cheese Stick</div>
+                                <div class="flavor-pill full-width-pill"><i class="fas fa-drumstick-bite"></i> Chicken Stuffer</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Special Pizza's -->
+                <div class="pizza-detail-card">
+                    <div class="card-red-banner">
+                        <span class="banner-pipe">|</span> Special Pizza's
+                    </div>
+                    <div class="card-pizza-img">
+                        <img src="assets/images/main%20course.jpg" alt="Special Pizza">
+                    </div>
+                    <div class="card-pizza-body">
+                        <div class="pizza-price-table col-3">
+                            <div class="price-th-row">
+                                <div>Medium</div>
+                                <div>Large</div>
+                                <div>Family</div>
+                            </div>
+                            <div class="price-td-row">
+                                <div>Rs/-1699</div>
+                                <div>Rs/-2199</div>
+                                <div>Rs/-2999</div>
+                            </div>
+                        </div>
+
+                        <div class="flavors-section">
+                            <span class="flavors-heading">SPECIAL FLAVORS:</span>
+                            <div class="flavors-stack">
+                                <div class="flavor-pill full-width-pill"><i class="fas fa-star"></i> Arabic Crispy</div>
+                                <div class="flavor-pill full-width-pill"><i class="fas fa-crown"></i> Hungry Cheese Gold Pizza</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Dedicated Full Screen Chicken Steak View -->
+    <div class="steak-full-screen" id="steakDetailsScreen" style="display: none;">
+        <div class="pizza-screen-top-bar">
+            <button class="back-to-menu-btn" id="backToMenuBtnSteak">
+                <i class="fas fa-arrow-left"></i> Back to Menu
+            </button>
+            <div class="screen-brand">
+                <img src="assets/images/logo.png" alt="HungryHowies" class="screen-logo">
+            </div>
+        </div>
+
+        <div class="steak-screen-content container">
+            <!-- Header Section with Steak Hero Layout -->
+            <div class="steak-header-grid">
+                <div class="steak-header-text">
+                    <div class="steak-cloche-icon">
+                        <span class="flourish-line"></span>
+                        <i class="fas fa-concierge-bell red-cloche"></i>
+                        <span class="flourish-line"></span>
+                    </div>
+                    <h2 class="steak-title">
+                        <span class="title-dark">CHICKEN</span><br>
+                        <span class="title-red">STEAK</span>
+                    </h2>
+                    <div class="star-flourish">
+                        <span class="star-line"></span>
+                        <span class="stars">★ ★ ★</span>
+                        <span class="star-line"></span>
+                    </div>
+                    <p class="steak-subtitle">Tender, juicy & perfectly grilled chicken steaks with signature seasoning & rich flavors.</p>
+                </div>
+                <div class="steak-header-image">
+                    <img src="assets/images/spicy.webp" alt="Chicken Steak" class="steak-plate-img">
+                </div>
+            </div>
+
+            <!-- Items & Pricing Table Card -->
+            <div class="steak-menu-card">
+                <div class="steak-table-header">
+                    <span>Item</span>
+                    <span>Price</span>
+                </div>
+                <div class="steak-table-body">
+                    <div class="steak-item-row">
+                        <div class="item-name"><span class="red-dot"></span> Tarragon</div>
+                        <div class="item-price-badge">Rs/-1499</div>
+                    </div>
+                    <div class="steak-item-row">
+                        <div class="item-name"><span class="red-dot"></span> Mashroom</div>
+                        <div class="item-price-badge">Rs/-1499</div>
+                    </div>
+                    <div class="steak-item-row">
+                        <div class="item-name"><span class="red-dot"></span> Twin Steak</div>
+                        <div class="item-price-badge">Rs/-1599</div>
+                    </div>
+                    <div class="steak-item-row">
+                        <div class="item-name"><span class="red-dot"></span> Smoked BBQ</div>
+                        <div class="item-price-badge">Rs/-1499</div>
+                    </div>
+                    <div class="steak-item-row">
+                        <div class="item-name"><span class="red-dot"></span> Hot Shot Jalapeno</div>
+                        <div class="item-price-badge">Rs/-1499</div>
+                    </div>
+                    <div class="steak-item-row">
+                        <div class="item-name"><span class="red-dot"></span> Mexican Hot & Spicy</div>
+                        <div class="item-price-badge">Rs/-1499</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Addon Cards -->
+            <div class="steak-info-cards">
+                <div class="info-addon-card">
+                    <div class="addon-icon-circle">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="addon-text">
+                        <span class="addon-label">SERVED WITH:</span>
+                        <span class="addon-value">Mash Potato / Plain</span>
+                    </div>
+                </div>
+                <div class="info-addon-card">
+                    <div class="addon-icon-circle">
+                        <i class="fas fa-stroopwafel"></i>
+                    </div>
+                    <div class="addon-text">
+                        <span class="addon-label">EXTRA:</span>
+                        <span class="addon-value">Crispy Chessy Potato — Rs/-150</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Dedicated Full Screen Burger Selection View -->
+    <div class="burger-full-screen" id="burgerDetailsScreen" style="display: none;">
+        <!-- Floating Decorative Ingredients -->
+        <div class="floating-ingredients-container">
+            <!-- Lettuce -->
+            <div class="floating-ingredient lettuce">
+                <svg viewBox="0 0 100 100" width="80" height="80">
+                    <path d="M50 15 C35 15, 20 28, 20 45 C20 62, 35 75, 50 75 C65 75, 80 62, 80 45 C80 28, 65 15, 50 15 Z" fill="#4CAF50" opacity="0.12"/>
+                    <path d="M50 25 C40 25, 30 35, 30 45 C30 55, 40 65, 50 65 C60 65, 70 55, 70 45 C70 35, 60 25, 50 25" fill="none" stroke="#2E7D32" stroke-width="1.5" stroke-dasharray="3 3"/>
+                </svg>
+            </div>
+            <!-- Tomato -->
+            <div class="floating-ingredient tomato">
+                <svg viewBox="0 0 100 100" width="70" height="70">
+                    <circle cx="50" cy="50" r="35" fill="#E53935" opacity="0.12"/>
+                    <circle cx="50" cy="50" r="35" fill="none" stroke="#C62828" stroke-width="2"/>
+                    <circle cx="50" cy="50" r="20" fill="none" stroke="#C62828" stroke-width="1" stroke-dasharray="2 2"/>
+                    <circle cx="40" cy="45" r="2.5" fill="#C62828"/>
+                    <circle cx="60" cy="45" r="2.5" fill="#C62828"/>
+                    <circle cx="50" cy="60" r="2.5" fill="#C62828"/>
+                </svg>
+            </div>
+            <!-- Cheese -->
+            <div class="floating-ingredient cheese">
+                <svg viewBox="0 0 100 100" width="65" height="65">
+                    <rect x="25" y="25" width="50" height="50" rx="5" fill="#FDD835" opacity="0.15" transform="rotate(15 50 50)"/>
+                    <rect x="25" y="25" width="50" height="50" rx="5" fill="none" stroke="#F57F17" stroke-width="1.5" transform="rotate(15 50 50)"/>
+                    <circle cx="45" cy="40" r="3" fill="#F57F17"/>
+                    <circle cx="58" cy="52" r="4.5" fill="#F57F17"/>
+                    <circle cx="40" cy="60" r="2.5" fill="#F57F17"/>
+                </svg>
+            </div>
+            <!-- Pickles -->
+            <div class="floating-ingredient pickle">
+                <svg viewBox="0 0 100 100" width="60" height="60">
+                    <ellipse cx="50" cy="50" rx="30" ry="20" fill="#43A047" opacity="0.12" transform="rotate(-30 50 50)"/>
+                    <ellipse cx="50" cy="50" rx="30" ry="20" fill="none" stroke="#1B5E20" stroke-width="1.5" transform="rotate(-30 50 50)"/>
+                    <ellipse cx="50" cy="50" rx="18" ry="12" fill="none" stroke="#1B5E20" stroke-width="1" stroke-dasharray="3 3" transform="rotate(-30 50 50)"/>
+                </svg>
+            </div>
+            <!-- Burger bun -->
+            <div class="floating-ingredient bun">
+                <svg viewBox="0 0 100 100" width="80" height="80">
+                    <path d="M20 50 C20 30, 80 30, 80 50 Z" fill="#FB8C00" opacity="0.12"/>
+                    <path d="M20 50 C20 30, 80 30, 80 50" fill="none" stroke="#EF6C00" stroke-width="1.5"/>
+                    <line x1="20" y1="50" x2="80" y2="50" stroke="#EF6C00" stroke-width="1.5"/>
+                    <circle cx="35" cy="40" r="1.5" fill="#EF6C00"/>
+                    <circle cx="50" cy="35" r="1.5" fill="#EF6C00"/>
+                    <circle cx="65" cy="40" r="1.5" fill="#EF6C00"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="burger-screen-top-bar">
+            <button class="back-to-menu-btn" id="backToMenuBtnBurger">
+                <i class="fas fa-arrow-left"></i> Back to Menu
+            </button>
+            <div class="screen-brand">
+                <img src="assets/images/logo.png" alt="HungryHowies" class="screen-logo">
+            </div>
+        </div>
+
+        <div class="burger-screen-content container">
+            <!-- Header Section with Burger Hero Layout -->
+            <div class="burger-header-grid">
+                <div class="burger-header-text">
+                    <div class="burger-cloche-icon">
+                        <span class="flourish-line"></span>
+                        <i class="fas fa-hamburger red-cloche"></i>
+                        <span class="flourish-line"></span>
+                    </div>
+                    <h2 class="burger-title">
+                        <span class="title-dark">OUR BURGER</span><br>
+                        <span class="title-red">SELECTION</span>
+                    </h2>
+                    <div class="star-flourish">
+                        <span class="star-line"></span>
+                        <span class="stars">★ ★ ★ ★ ★</span>
+                        <span class="star-line"></span>
+                    </div>
+                    <p class="burger-subtitle">Crafted with premium ingredients, fresh vegetables, signature sauces, and perfectly grilled patties.</p>
+                </div>
+                <div class="burger-header-image">
+                    <img src="assets/images/beef_burger_hero.jpg" alt="Hungry Howies Burger Selection" class="burger-hero-img">
+                </div>
+            </div>
+
+            <!-- Double Column Burger Categories -->
+            <div class="burger-sections-grid">
+                
+                <!-- SECTION 1: BEEF BURGER -->
+                <div class="burger-category-column">
+                    <div class="burger-menu-card beef-card">
+                        <div class="burger-table-header beef-header">
+                            <span><i class="fas fa-fire red-glow-icon"></i> BEEF BURGER</span>
+                            <span>Price</span>
+                        </div>
+                        <div class="burger-table-body">
+                            <div class="burger-item-row">
+                                <div class="item-name"><span class="red-dot"></span> Hungry Stacker</div>
+                                <div class="item-price-badge">Rs/-1349</div>
+                            </div>
+                            <div class="burger-item-row">
+                                <div class="item-name"><span class="red-dot"></span> The Smashroom</div>
+                                <div class="item-price-badge">Rs/-1099</div>
+                            </div>
+                            <div class="burger-item-row">
+                                <div class="item-name"><span class="red-dot"></span> Mexicano Beef</div>
+                                <div class="item-price-badge">Rs/-999</div>
+                            </div>
+                            <div class="burger-item-row">
+                                <div class="item-name"><span class="red-dot"></span> Classic Beef</div>
+                                <div class="item-price-badge">Rs/-999</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Highlighted Extra Beef Card -->
+                    <div class="extra-beef-card">
+                        <div class="extra-beef-header">
+                            <span class="extra-badge-premium"><i class="fas fa-award"></i> PREMIUM ADD-ON</span>
+                            <h4>EXTRA BEEF PATTY OPTIONS</h4>
+                        </div>
+                        <div class="extra-beef-badges">
+                            <div class="extra-badge-item">
+                                <span class="badge-weight">150g</span>
+                                <span class="badge-price free">Same Price</span>
+                            </div>
+                            <div class="extra-badge-item highlighted">
+                                <span class="badge-weight">200g</span>
+                                <span class="badge-price">Rs/-150</span>
+                            </div>
+                            <div class="extra-badge-item highlighted">
+                                <span class="badge-weight">250g</span>
+                                <span class="badge-price">Rs/-250</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 2: CHICKEN BURGER -->
+                <div class="burger-category-column">
+                    <div class="burger-menu-card chicken-card">
+                        <div class="burger-table-header chicken-header">
+                            <span><i class="fas fa-drumstick-bite"></i> CHICKEN BURGER</span>
+                            <span>Price</span>
+                        </div>
+                        
+                        <!-- Premium Chicken Burger Photography inside card -->
+                        <div class="chicken-photo-banner">
+                            <img src="assets/images/chicken_burger_hero.jpg" alt="Crispy Chicken Burger" class="chicken-banner-img">
+                            <div class="banner-gradient"></div>
+                            <span class="photo-badge"><i class="fas fa-star"></i> Best Seller</span>
+                        </div>
+
+                        <div class="burger-table-body">
+                            <div class="burger-item-row">
+                                <div class="item-name"><i class="fas fa-drumstick-bite chicken-dot"></i> Hungry Special Crispy</div>
+                                <div class="item-price-badge">Rs/-1499</div>
+                            </div>
+                            <div class="burger-item-row">
+                                <div class="item-name"><i class="fas fa-fire-alt chicken-dot"></i> BBQ Juicy Lucy</div>
+                                <div class="item-price-badge">Rs/-1499</div>
+                            </div>
+                            <div class="burger-item-row">
+                                <div class="item-name"><i class="fas fa-graduation-cap chicken-dot"></i> Student Burger</div>
+                                <div class="item-price-badge">Rs/-1599</div>
+                            </div>
+                            <div class="burger-item-row">
+                                <div class="item-name"><i class="fas fa-egg chicken-dot"></i> Zeleto Zinger</div>
+                                <div class="item-price-badge">Rs/-1499</div>
+                            </div>
+                            <div class="burger-item-row">
+                                <div class="item-name"><i class="fas fa-bolt chicken-dot"></i> Zinger Burger</div>
+                                <div class="item-price-badge">Rs/-1499</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Dedicated Full Screen Dajjaj Brost View -->
+    <div class="brost-full-screen" id="brostDetailsScreen" style="display: none;">
+        <!-- Floating Decorative Ingredients -->
+        <div class="floating-ingredients-container">
+            <!-- Crispy chicken piece -->
+            <div class="floating-ingredient brost-chicken-piece">
+                <svg viewBox="0 0 100 100" width="70" height="70">
+                    <path d="M25 45 C20 40, 15 50, 20 60 C25 70, 45 75, 60 70 C75 65, 85 45, 80 30 C75 15, 55 25, 45 35 Z" fill="#D84315" opacity="0.12"/>
+                    <path d="M25 45 C20 40, 15 50, 20 60 C25 70, 45 75, 60 70 C75 65, 85 45, 80 30 C75 15, 55 25, 45 35" fill="none" stroke="#BF360C" stroke-width="1.5" stroke-dasharray="2 2"/>
+                </svg>
+            </div>
+            <!-- French fry -->
+            <div class="floating-ingredient brost-fry">
+                <svg viewBox="0 0 100 100" width="55" height="55">
+                    <rect x="35" y="15" width="12" height="70" rx="3" fill="#FDD835" opacity="0.15" transform="rotate(35 41 50)"/>
+                    <rect x="35" y="15" width="12" height="70" rx="3" fill="none" stroke="#F57F17" stroke-width="1.5" transform="rotate(35 41 50)"/>
+                </svg>
+            </div>
+            <!-- Garlic sauce -->
+            <div class="floating-ingredient brost-sauce">
+                <svg viewBox="0 0 100 100" width="60" height="60">
+                    <circle cx="50" cy="50" r="30" fill="#FFFDE7" opacity="0.18"/>
+                    <circle cx="50" cy="50" r="30" fill="none" stroke="#E0F2F1" stroke-width="2"/>
+                    <circle cx="50" cy="50" r="24" fill="none" stroke="#B2DFDB" stroke-width="1" stroke-dasharray="2 2"/>
+                    <circle cx="45" cy="45" r="1.5" fill="#4CAF50" opacity="0.6"/>
+                    <circle cx="55" cy="52" r="1" fill="#4CAF50" opacity="0.6"/>
+                </svg>
+            </div>
+            <!-- Fresh herbs -->
+            <div class="floating-ingredient brost-herb">
+                <svg viewBox="0 0 100 100" width="50" height="50">
+                    <path d="M50 80 C40 60, 30 50, 50 20 C70 50, 60 60, 50 80 Z" fill="#81C784" opacity="0.15"/>
+                    <path d="M50 80 C40 60, 30 50, 50 20 C70 50, 60 60, 50 80" fill="none" stroke="#2E7D32" stroke-width="1.5"/>
+                    <path d="M50 80 L50 30" fill="none" stroke="#2E7D32" stroke-width="1"/>
+                </svg>
+            </div>
+            <!-- Lemon slice -->
+            <div class="floating-ingredient brost-lemon">
+                <svg viewBox="0 0 100 100" width="65" height="65">
+                    <circle cx="50" cy="50" r="30" fill="#FFEB3B" opacity="0.15"/>
+                    <circle cx="50" cy="50" r="30" fill="none" stroke="#FBC02D" stroke-width="2"/>
+                    <circle cx="50" cy="50" r="26" fill="none" stroke="#FBC02D" stroke-width="0.8"/>
+                    <line x1="50" y1="20" x2="50" y2="80" stroke="#FBC02D" stroke-width="1"/>
+                    <line x1="20" y1="50" x2="80" y2="50" stroke="#FBC02D" stroke-width="1"/>
+                    <line x1="29" y1="29" x2="71" y2="71" stroke="#FBC02D" stroke-width="1"/>
+                    <line x1="29" y1="71" x2="71" y2="29" stroke="#FBC02D" stroke-width="1"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="burger-screen-top-bar">
+            <button class="back-to-menu-btn" id="backToMenuBtnBrost">
+                <i class="fas fa-arrow-left"></i> Back to Menu
+            </button>
+            <div class="screen-brand">
+                <img src="assets/images/logo.png" alt="HungryHowies" class="screen-logo">
+            </div>
+        </div>
+
+        <div class="burger-screen-content container">
+            <!-- Header Section with Broast Hero Layout -->
+            <div class="burger-header-grid">
+                <div class="burger-header-text">
+                    <div class="burger-cloche-icon">
+                        <span class="flourish-line"></span>
+                        <i class="fas fa-drumstick-bite red-cloche"></i>
+                        <span class="flourish-line"></span>
+                    </div>
+                    <h2 class="burger-title">
+                        <span class="title-dark">DAJJAJ</span><br>
+                        <span class="title-red">BROST</span>
+                    </h2>
+                    <div class="star-flourish">
+                        <span class="star-line"></span>
+                        <span class="stars">★ ★ ★ ★ ★</span>
+                        <span class="star-line"></span>
+                    </div>
+                    <p class="burger-subtitle">Golden crispy broast chicken, perfectly seasoned and freshly prepared for a delicious family meal.</p>
+                </div>
+                <div class="burger-header-image">
+                    <img src="assets/images/broast_hero.jpg" alt="Dajjaj Brost Selection" class="burger-hero-img">
+                </div>
+            </div>
+
+            <!-- Single Column Brost Menu -->
+            <div class="steak-menu-card" style="margin-top: 20px;">
+                <div class="burger-table-header beef-header">
+                    <span><i class="fas fa-drumstick-bite red-glow-icon"></i> DAJJAJ BROST MENU</span>
+                    <span>Price</span>
+                </div>
+                <div class="burger-table-body">
+                    <div class="burger-item-row">
+                        <div class="item-name"><span class="red-dot"></span> Half Broast (with Fries & Garlic Sauce)</div>
+                        <div class="item-price-badge">Rs/-1250</div>
+                    </div>
+                    <div class="burger-item-row">
+                        <div class="item-name"><span class="red-dot"></span> Family Broast (with Fries & Garlic Sauce)</div>
+                        <div class="item-price-badge">Rs/-2400</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dedicated Full Screen Pasta View -->
+    <div class="pasta-full-screen" id="pastaDetailsScreen" style="display: none;">
+        <!-- Floating Decorative Ingredients -->
+        <div class="floating-ingredients-container">
+            <!-- Parmesan cheese -->
+            <div class="floating-ingredient pasta-cheese">
+                <svg viewBox="0 0 100 100" width="70" height="70">
+                    <polygon points="20,80 80,80 50,20" fill="#FFF59D" opacity="0.15"/>
+                    <polygon points="20,80 80,80 50,20" fill="none" stroke="#FBC02D" stroke-width="1.5"/>
+                    <circle cx="45" cy="65" r="4" fill="#FBC02D"/>
+                    <circle cx="58" cy="55" r="5" fill="#FBC02D"/>
+                </svg>
+            </div>
+            <!-- Basil leaf -->
+            <div class="floating-ingredient pasta-basil">
+                <svg viewBox="0 0 100 100" width="60" height="60">
+                    <path d="M50 80 C30 60, 20 40, 50 15 C80 40, 70 60, 50 80 Z" fill="#4CAF50" opacity="0.12"/>
+                    <path d="M50 80 C30 60, 20 40, 50 15 C80 40, 70 60, 50 80" fill="none" stroke="#1B5E20" stroke-width="1.5"/>
+                    <path d="M50 80 L50 30" stroke="#1B5E20" stroke-width="1"/>
+                </svg>
+            </div>
+            <!-- Cherry tomato -->
+            <div class="floating-ingredient pasta-tomato">
+                <svg viewBox="0 0 100 100" width="55" height="55">
+                    <circle cx="50" cy="50" r="30" fill="#F44336" opacity="0.15"/>
+                    <circle cx="50" cy="50" r="30" fill="none" stroke="#D32F2F" stroke-width="2"/>
+                    <path d="M50 20 C48 15, 52 15, 50 20" stroke="#2E7D32" stroke-width="3"/>
+                </svg>
+            </div>
+            <!-- Garlic clove -->
+            <div class="floating-ingredient pasta-garlic">
+                <svg viewBox="0 0 100 100" width="50" height="50">
+                    <path d="M50 20 C35 35, 30 60, 50 80 C70 60, 65 35, 50 20 Z" fill="#ECEFF1" opacity="0.18"/>
+                    <path d="M50 20 C35 35, 30 60, 50 80 C70 60, 65 35, 50 20" fill="none" stroke="#CFD8DC" stroke-width="1.5"/>
+                </svg>
+            </div>
+            <!-- Pasta illustration -->
+            <div class="floating-ingredient pasta-illustration">
+                <svg viewBox="0 0 100 100" width="60" height="60">
+                    <path d="M20 50 Q35 35 50 50 T80 50" fill="none" stroke="#FB8C00" stroke-width="4" opacity="0.15"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="burger-screen-top-bar">
+            <button class="back-to-menu-btn" id="backToMenuBtnPasta">
+                <i class="fas fa-arrow-left"></i> Back to Menu
+            </button>
+            <div class="screen-brand">
+                <img src="assets/images/logo.png" alt="HungryHowies" class="screen-logo">
+            </div>
+        </div>
+
+        <div class="burger-screen-content container">
+            <!-- Header Section with Pasta Hero Layout -->
+            <div class="burger-header-grid">
+                <div class="burger-header-text">
+                    <div class="burger-cloche-icon">
+                        <span class="flourish-line"></span>
+                        <i class="fas fa-utensils red-cloche"></i>
+                        <span class="flourish-line"></span>
+                    </div>
+                    <h2 class="burger-title">
+                        <span class="title-dark">OUR PASTA</span><br>
+                        <span class="title-red">SELECTION</span>
+                    </h2>
+                    <div class="star-flourish">
+                        <span class="star-line"></span>
+                        <span class="stars">★ ★ ★ ★ ★</span>
+                        <span class="star-line"></span>
+                    </div>
+                    <p class="burger-subtitle">Freshly prepared pasta tossed in rich sauces, premium cheeses, and authentic Italian flavors.</p>
+                </div>
+                <div class="burger-header-image">
+                    <img src="assets/images/pasta_hero.jpg" alt="Pasta Selection" class="burger-hero-img">
+                </div>
+            </div>
+
+            <!-- Pasta Items Grid of Cards -->
+            <div class="pasta-cards-grid">
+                
+                <!-- 1. Chicken Alfredo -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/pasta_hero.jpg" alt="Chicken Alfredo" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-999</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Chicken Alfredo</h4>
+                        <p>Creamy Alfredo sauce, grilled chicken, parmesan cheese, and fresh herbs.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium"><i class="fas fa-crown"></i> Chef Special</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Penne Arrabiata -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/pasta_hero.jpg" alt="Penne Arrabiata" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-999</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Penne Arrabiata</h4>
+                        <p>Penne pasta cooked in spicy Arrabiata sauce with Italian herbs and garlic.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium spicy"><i class="fas fa-pepper-hot"></i> Spicy Italian</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Hungry Parmesan -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/pasta_hero.jpg" alt="Hungry Parmesan" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-1099</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Hungry Parmesan</h4>
+                        <p>Signature parmesan pasta loaded with creamy cheese and premium seasonings.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium signature"><i class="fas fa-star"></i> Signature</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
