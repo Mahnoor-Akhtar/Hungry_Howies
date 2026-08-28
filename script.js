@@ -6,17 +6,10 @@ let scene, camera, renderer, particles;
 let currentSlide = 0;
 const totalSlides = 3;
 
-// Loading Screen
+// Page Initialization
 window.addEventListener('load', () => {
-    setTimeout(() => {
-        const loadingScreen = document.getElementById('loadingScreen');
-        loadingScreen.style.opacity = '0';
-        loadingScreen.style.visibility = 'hidden';
-        
-        // Initialize animations after loading
-        initAnimations();
-        init3DBackground();
-    }, 2000);
+    initAnimations();
+    init3DBackground();
 });
 
 // Initialize GSAP Animations

@@ -568,6 +568,14 @@ body {
     font-size: 1.1rem;
 }
 
+@media (max-width: 768px) {
+    .menu-badge-wrapper,
+    .section-subtitle,
+    .menu-title-divider {
+        display: none !important;
+    }
+}
+
 /* Control Pill Bar matching screenshot */
 .menu-search-control-pill {
     display: flex;
@@ -2043,20 +2051,25 @@ body {
 
 /* Header Grid with Plate Image */
 .steak-header-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 20px;
+    justify-content: center;
+    text-align: center;
     margin-bottom: 25px;
 }
 
 .steak-header-text {
-    text-align: left;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .steak-cloche-icon {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 12px;
     margin-bottom: 10px;
 }
@@ -2086,6 +2099,7 @@ body {
 .star-flourish {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     margin-bottom: 12px;
 }
@@ -2107,12 +2121,13 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.92rem;
     line-height: 1.5;
-    max-width: 360px;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .steak-header-image {
-    display: flex;
-    justify-content: center;
+    display: none !important;
 }
 
 .steak-plate-img {
@@ -2271,6 +2286,10 @@ body {
     .steak-subtitle {
         margin: 0 auto;
     }
+
+    .steak-header-image {
+        display: none !important;
+    }
 }
 
 /* ==========================================================================
@@ -2319,21 +2338,26 @@ body {
 
 /* Burger Hero Section */
 .burger-header-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 40px;
+    justify-content: center;
+    text-align: center;
     margin-bottom: 45px;
     padding-top: 20px;
 }
 
 .burger-header-text {
-    text-align: left;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .burger-cloche-icon {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 12px;
     margin-bottom: 15px;
 }
@@ -2363,13 +2387,13 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     line-height: 1.6;
-    max-width: 460px;
+    max-width: 560px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .burger-header-image {
-    display: flex;
-    justify-content: center;
-    position: relative;
+    display: none !important;
 }
 
 .burger-hero-img {
@@ -2705,6 +2729,10 @@ body {
 
     .burger-subtitle {
         margin: 0 auto;
+    }
+
+    .burger-header-image {
+        display: none !important;
     }
 
     .burger-sections-grid {
@@ -3179,24 +3207,38 @@ body {
     box-shadow: 0 20px 45px rgba(0,0,0,0.07);
 }
 
-.topping-icon-wrapper {
-    width: 70px;
-    height: 70px;
+.topping-icon-wrapper,
+.topping-img-wrapper {
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
-    background: rgba(211, 47, 47, 0.05);
-    color: #D32F2F;
+    background: #FFF5F5;
+    border: 2px solid rgba(211, 47, 47, 0.12);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.8rem;
     margin-bottom: 20px;
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(198, 40, 40, 0.08);
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
-.topping-item-card:hover .topping-icon-wrapper {
-    transform: scale(1.08) rotate(5deg);
-    background: #D32F2F;
-    color: #FFFFFF;
+.topping-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.topping-item-card:hover .topping-icon-wrapper,
+.topping-item-card:hover .topping-img-wrapper {
+    transform: scale(1.08);
+    border-color: #D32F2F;
+    box-shadow: 0 12px 25px rgba(198, 40, 40, 0.2);
+}
+
+.topping-item-card:hover .topping-img {
+    transform: scale(1.1);
 }
 
 .topping-name {
