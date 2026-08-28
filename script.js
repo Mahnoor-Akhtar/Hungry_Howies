@@ -1375,6 +1375,7 @@ document.addEventListener('keydown', (e) => {
 // 3D Testimonial Carousel
 function changeSlide(direction) {
     const slides = document.querySelectorAll('.testimonial-slide');
+    if (!slides || slides.length === 0) return;
     
     // Hide current slide
     gsap.to(slides[currentSlide], {
@@ -1564,6 +1565,7 @@ if (newsletterForm) {
 let lastScrollY = window.scrollY;
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.header');
+    if (!header) return;
     const currentScrollY = window.scrollY;
     
     if (currentScrollY > 100) {
