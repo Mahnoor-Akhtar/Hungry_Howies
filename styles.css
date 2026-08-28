@@ -817,54 +817,96 @@ body {
 
 .dishes-showcase {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 35px;
-    max-width: 1200px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 10px 0;
+}
+
+@media (max-width: 1280px) {
+    .dishes-showcase {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
 }
 
 @media (max-width: 1024px) {
     .dishes-showcase {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
     }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 850px) {
+    .dishes-showcase {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 550px) {
     .dishes-showcase {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
 
 .dish-card-3d {
     background: #FFFFFF;
-    border-radius: 24px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-    transition: all 0.4s ease;
-    border: 1px solid rgba(230, 225, 218, 0.6);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid rgba(230, 225, 218, 0.7);
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .dish-card-3d:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 18px 40px rgba(237, 28, 36, 0.12);
+    border-color: rgba(237, 28, 36, 0.25);
 }
 
 .dish-image-container {
     position: relative;
-    height: 220px;
+    height: 230px;
     overflow: hidden;
+    background: #F8F8F8;
 }
 
 .dish-image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: all 0.5s ease;
+    transition: transform 0.5s ease;
 }
 
 .dish-card-3d:hover .dish-image-container img {
-    transform: scale(1.06);
+    transform: scale(1.08);
+}
+
+.card-category-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(237, 28, 36, 0.92);
+    color: #FFFFFF;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .dish-glow {
@@ -873,53 +915,77 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, transparent, rgba(198, 40, 40, 0.15), transparent);
-    opacity: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.3) 100%);
+    opacity: 0.6;
     transition: all 0.5s ease;
 }
 
 .dish-card-3d:hover .dish-glow {
-    opacity: 0.3;
+    opacity: 0.2;
 }
 
 .dish-content {
-    padding: 24px 20px 28px;
-    text-align: center;
+    padding: 22px 20px 24px;
+    text-align: left;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-grow: 1;
+    justify-content: space-between;
 }
 
 .dish-content h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
-    color: #111111;
-    margin-bottom: 18px;
+    color: #1A1A1A;
+    margin-bottom: 8px;
+}
+
+.dish-card-desc {
+    font-size: 0.88rem;
+    color: #666666;
+    line-height: 1.45;
+    margin-bottom: 20px;
+    min-height: 42px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .dish-cta {
-    background: #C62828;
+    background: linear-gradient(135deg, #ED1C24, #C62828);
     color: #FFFFFF;
     border: none;
-    padding: 12px 0;
+    padding: 13px 24px;
     border-radius: 30px;
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     transition: all 0.3s ease;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    width: 85%;
+    letter-spacing: 0.8px;
+    width: 100%;
     font-size: 0.82rem;
-    box-shadow: 0 4px 14px rgba(198, 40, 40, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    box-shadow: 0 4px 15px rgba(237, 28, 36, 0.22);
 }
 
-.dish-cta:hover {
-    background: #B71C1C;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(198, 40, 40, 0.35);
+.dish-cta i {
+    transition: transform 0.3s ease;
+}
+
+.dish-card-3d:hover .dish-cta {
+    background: linear-gradient(135deg, #C62828, #9A0007);
+    box-shadow: 0 6px 20px rgba(237, 28, 36, 0.35);
+}
+
+.dish-card-3d:hover .dish-cta i {
+    transform: translateX(4px);
 }
 
 /* Chef's Story */
