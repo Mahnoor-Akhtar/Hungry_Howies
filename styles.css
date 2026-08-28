@@ -842,6 +842,7 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
     transition: all 0.4s ease;
     border: 1px solid rgba(230, 225, 218, 0.6);
+    cursor: pointer;
 }
 
 .dish-card-3d:hover {

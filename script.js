@@ -62,15 +62,13 @@ function initAnimations() {
         gsap.from(card, {
             scrollTrigger: {
                 trigger: card,
-                start: 'top 80%',
-                end: 'bottom 20%',
-                toggleActions: 'play none none reverse'
+                start: 'top 90%',
+                once: true
             },
-            duration: 1.2,
-            y: 150,
+            duration: 0.6,
+            y: 50,
             opacity: 0,
-            rotationY: -30,
-            delay: i * 0.3,
+            delay: (i % 3) * 0.1,
             ease: 'power3.out'
         });
     });
@@ -402,19 +400,16 @@ const backToMenuBtn = document.getElementById('backToMenuBtn');
 const pizzaCard = document.querySelector('.dish-card-3d[data-category="pizza"]');
 
 if (pizzaCard) {
-    const pizzaCta = pizzaCard.querySelector('.dish-cta');
-    if (pizzaCta) {
-        pizzaCta.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (pizzaDetailsScreen) {
-                pizzaDetailsScreen.style.display = 'block';
-                document.body.style.overflow = 'hidden';
-                setTimeout(() => {
-                    pizzaDetailsScreen.classList.add('active');
-                }, 10);
-            }
-        });
-    }
+    pizzaCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (pizzaDetailsScreen) {
+            pizzaDetailsScreen.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                pizzaDetailsScreen.classList.add('active');
+            }, 10);
+        }
+    });
 }
 
 if (backToMenuBtn) {
@@ -435,28 +430,25 @@ const backToMenuBtnSteak = document.getElementById('backToMenuBtnSteak');
 const steakCard = document.querySelector('.dish-card-3d[data-category="chicken-steak"]');
 
 if (steakCard) {
-    const steakCta = steakCard.querySelector('.dish-cta');
-    if (steakCta) {
-        steakCta.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (steakDetailsScreen) {
-                steakDetailsScreen.style.display = 'block';
-                document.body.style.overflow = 'hidden';
-                setTimeout(() => {
-                    steakDetailsScreen.classList.add('active');
-                    // GSAP stagger animation for steak menu items
-                    gsap.fromTo('.steak-item-row', 
-                        { opacity: 0, y: 15 }, 
-                        { opacity: 1, y: 0, duration: 0.4, stagger: 0.08, ease: 'power2.out', delay: 0.2 }
-                    );
-                    gsap.fromTo('.info-addon-card', 
-                        { opacity: 0, y: 20 }, 
-                        { opacity: 1, y: 0, duration: 0.4, stagger: 0.1, ease: 'power2.out', delay: 0.5 }
-                    );
-                }, 10);
-            }
-        });
-    }
+    steakCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (steakDetailsScreen) {
+            steakDetailsScreen.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                steakDetailsScreen.classList.add('active');
+                // GSAP stagger animation for steak menu items
+                gsap.fromTo('.steak-item-row', 
+                    { opacity: 0, y: 15 }, 
+                    { opacity: 1, y: 0, duration: 0.4, stagger: 0.08, ease: 'power2.out', delay: 0.2 }
+                );
+                gsap.fromTo('.info-addon-card', 
+                    { opacity: 0, y: 20 }, 
+                    { opacity: 1, y: 0, duration: 0.4, stagger: 0.1, ease: 'power2.out', delay: 0.5 }
+                );
+            }, 10);
+        }
+    });
 }
 
 if (backToMenuBtnSteak) {
@@ -503,13 +495,10 @@ function openBurgerDetails() {
 }
 
 if (burgerCard) {
-    const burgerCta = burgerCard.querySelector('.dish-cta');
-    if (burgerCta) {
-        burgerCta.addEventListener('click', (e) => {
-            e.preventDefault();
-            openBurgerDetails();
-        });
-    }
+    burgerCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        openBurgerDetails();
+    });
 }
 
 if (backToMenuBtnBurger) {
@@ -553,13 +542,10 @@ function openBrostDetails() {
 }
 
 if (brostCard) {
-    const brostCta = brostCard.querySelector('.dish-cta');
-    if (brostCta) {
-        brostCta.addEventListener('click', (e) => {
-            e.preventDefault();
-            openBrostDetails();
-        });
-    }
+    brostCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        openBrostDetails();
+    });
 }
 
 if (backToMenuBtnBrost) {
@@ -599,13 +585,10 @@ function openPastaDetails() {
 }
 
 if (pastaCard) {
-    const pastaCta = pastaCard.querySelector('.dish-cta');
-    if (pastaCta) {
-        pastaCta.addEventListener('click', (e) => {
-            e.preventDefault();
-            openPastaDetails();
-        });
-    }
+    pastaCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        openPastaDetails();
+    });
 }
 
 if (backToMenuBtnPasta) {
@@ -653,13 +636,10 @@ function openPaniniDetails() {
 }
 
 if (paniniCard) {
-    const paniniCta = paniniCard.querySelector('.dish-cta');
-    if (paniniCta) {
-        paniniCta.addEventListener('click', (e) => {
-            e.preventDefault();
-            openPaniniDetails();
-        });
-    }
+    paniniCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        openPaniniDetails();
+    });
 }
 
 if (backToMenuBtnPanini) {
@@ -699,13 +679,10 @@ function openAppetizerDetails() {
 }
 
 if (appetizerCard) {
-    const appetizerCta = appetizerCard.querySelector('.dish-cta');
-    if (appetizerCta) {
-        appetizerCta.addEventListener('click', (e) => {
-            e.preventDefault();
-            openAppetizerDetails();
-        });
-    }
+    appetizerCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        openAppetizerDetails();
+    });
 }
 
 if (backToMenuBtnAppetizer) {
@@ -745,13 +722,10 @@ function openFriesDetails() {
 }
 
 if (friesCard) {
-    const friesCta = friesCard.querySelector('.dish-cta');
-    if (friesCta) {
-        friesCta.addEventListener('click', (e) => {
-            e.preventDefault();
-            openFriesDetails();
-        });
-    }
+    friesCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        openFriesDetails();
+    });
 }
 
 if (backToMenuBtnFries) {
@@ -791,13 +765,10 @@ function openBeveragesDetails() {
 }
 
 if (beveragesCard) {
-    const beveragesCta = beveragesCard.querySelector('.dish-cta');
-    if (beveragesCta) {
-        beveragesCta.addEventListener('click', (e) => {
-            e.preventDefault();
-            openBeveragesDetails();
-        });
-    }
+    beveragesCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        openBeveragesDetails();
+    });
 }
 
 if (backToMenuBtnBeverages) {
@@ -837,13 +808,10 @@ function openToppingsDetails() {
 }
 
 if (toppingsCard) {
-    const toppingsCta = toppingsCard.querySelector('.dish-cta');
-    if (toppingsCta) {
-        toppingsCta.addEventListener('click', (e) => {
-            e.preventDefault();
-            openToppingsDetails();
-        });
-    }
+    toppingsCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        openToppingsDetails();
+    });
 }
 
 if (backToMenuBtnToppings) {
@@ -883,13 +851,10 @@ function openHotBeveragesDetails() {
 }
 
 if (hotBeveragesCard) {
-    const hotBeveragesCta = hotBeveragesCard.querySelector('.dish-cta');
-    if (hotBeveragesCta) {
-        hotBeveragesCta.addEventListener('click', (e) => {
-            e.preventDefault();
-            openHotBeveragesDetails();
-        });
-    }
+    hotBeveragesCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        openHotBeveragesDetails();
+    });
 }
 
 if (backToMenuBtnHotBeverages) {
@@ -929,13 +894,10 @@ function openColdCoffeeDetails() {
 }
 
 if (coldCoffeeCard) {
-    const coldCoffeeCta = coldCoffeeCard.querySelector('.dish-cta');
-    if (coldCoffeeCta) {
-        coldCoffeeCta.addEventListener('click', (e) => {
-            e.preventDefault();
-            openColdCoffeeDetails();
-        });
-    }
+    coldCoffeeCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        openColdCoffeeDetails();
+    });
 }
 
 if (backToMenuBtnColdCoffee) {
@@ -975,13 +937,10 @@ function openIceCreamDetails() {
 }
 
 if (iceCreamCard) {
-    const iceCreamCta = iceCreamCard.querySelector('.dish-cta');
-    if (iceCreamCta) {
-        iceCreamCta.addEventListener('click', (e) => {
-            e.preventDefault();
-            openIceCreamDetails();
-        });
-    }
+    iceCreamCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        openIceCreamDetails();
+    });
 }
 
 if (backToMenuBtnIceCream) {
@@ -1021,13 +980,10 @@ function openMocktailsDetails() {
 }
 
 if (mocktailsCard) {
-    const mocktailsCta = mocktailsCard.querySelector('.dish-cta');
-    if (mocktailsCta) {
-        mocktailsCta.addEventListener('click', (e) => {
-            e.preventDefault();
-            openMocktailsDetails();
-        });
-    }
+    mocktailsCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        openMocktailsDetails();
+    });
 }
 
 if (backToMenuBtnMocktails) {
@@ -1067,13 +1023,10 @@ function openMojitoDetails() {
 }
 
 if (mojitoCard) {
-    const mojitoCta = mojitoCard.querySelector('.dish-cta');
-    if (mojitoCta) {
-        mojitoCta.addEventListener('click', (e) => {
-            e.preventDefault();
-            openMojitoDetails();
-        });
-    }
+    mojitoCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        openMojitoDetails();
+    });
 }
 
 if (backToMenuBtnMojito) {
@@ -1113,13 +1066,10 @@ function openSmoothiesDetails() {
 }
 
 if (smoothiesCard) {
-    const smoothiesCta = smoothiesCard.querySelector('.dish-cta');
-    if (smoothiesCta) {
-        smoothiesCta.addEventListener('click', (e) => {
-            e.preventDefault();
-            openSmoothiesDetails();
-        });
-    }
+    smoothiesCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        openSmoothiesDetails();
+    });
 }
 
 if (backToMenuBtnSmoothies) {
@@ -1159,13 +1109,10 @@ function openIceShakesDetails() {
 }
 
 if (iceShakesCard) {
-    const iceShakesCta = iceShakesCard.querySelector('.dish-cta');
-    if (iceShakesCta) {
-        iceShakesCta.addEventListener('click', (e) => {
-            e.preventDefault();
-            openIceShakesDetails();
-        });
-    }
+    iceShakesCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        openIceShakesDetails();
+    });
 }
 
 if (backToMenuBtnIceShakes) {
@@ -1205,13 +1152,10 @@ function openMilkShakesDetails() {
 }
 
 if (milkShakesCard) {
-    const milkShakesCta = milkShakesCard.querySelector('.dish-cta');
-    if (milkShakesCta) {
-        milkShakesCta.addEventListener('click', (e) => {
-            e.preventDefault();
-            openMilkShakesDetails();
-        });
-    }
+    milkShakesCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        openMilkShakesDetails();
+    });
 }
 
 if (backToMenuBtnMilkShakes) {
@@ -1251,13 +1195,10 @@ function openSoftDrinksDetails() {
 }
 
 if (softDrinksCard) {
-    const softDrinksCta = softDrinksCard.querySelector('.dish-cta');
-    if (softDrinksCta) {
-        softDrinksCta.addEventListener('click', (e) => {
-            e.preventDefault();
-            openSoftDrinksDetails();
-        });
-    }
+    softDrinksCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        openSoftDrinksDetails();
+    });
 }
 
 if (backToMenuBtnSoftDrinks) {
