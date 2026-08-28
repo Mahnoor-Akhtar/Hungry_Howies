@@ -530,6 +530,26 @@ body {
     position: relative;
 }
 
+.menu-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.menu-header-logo {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 15px rgba(237, 28, 36, 0.3));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.menu-header-logo:hover {
+    transform: scale(1.06);
+    filter: drop-shadow(0 8px 20px rgba(237, 28, 36, 0.45));
+}
+
 .menu-badge-wrapper {
     margin-bottom: 18px;
 }
