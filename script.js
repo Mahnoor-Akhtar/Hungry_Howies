@@ -720,6 +720,558 @@ if (backToMenuBtnAppetizer) {
     });
 }
 
+// Dedicated Full Screen Fries View Navigation Handler
+const friesDetailsScreen = document.getElementById('friesDetailsScreen');
+const backToMenuBtnFries = document.getElementById('backToMenuBtnFries');
+const friesCard = document.querySelector('.dish-card-3d[data-category="fries"]');
+
+function openFriesDetails() {
+    if (friesDetailsScreen) {
+        friesDetailsScreen.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+            friesDetailsScreen.classList.add('active');
+            // GSAP stagger-in transitions
+            gsap.fromTo('#friesDetailsScreen .pasta-detail-card', 
+                { opacity: 0, y: 35 }, 
+                { opacity: 1, y: 0, duration: 0.6, stagger: 0.15, ease: 'power2.out', delay: 0.1 }
+            );
+            gsap.fromTo('#friesDetailsScreen .floating-ingredient',
+                { opacity: 0, scale: 0.5 },
+                { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
+            );
+        }, 10);
+    }
+}
+
+if (friesCard) {
+    const friesCta = friesCard.querySelector('.dish-cta');
+    if (friesCta) {
+        friesCta.addEventListener('click', (e) => {
+            e.preventDefault();
+            openFriesDetails();
+        });
+    }
+}
+
+if (backToMenuBtnFries) {
+    backToMenuBtnFries.addEventListener('click', () => {
+        if (friesDetailsScreen) {
+            friesDetailsScreen.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                friesDetailsScreen.style.display = 'none';
+            }, 400);
+        }
+    });
+}
+
+// Dedicated Full Screen Beverages View Navigation Handler
+const beveragesDetailsScreen = document.getElementById('beveragesDetailsScreen');
+const backToMenuBtnBeverages = document.getElementById('backToMenuBtnBeverages');
+const beveragesCard = document.querySelector('.dish-card-3d[data-category="beverages"]');
+
+function openBeveragesDetails() {
+    if (beveragesDetailsScreen) {
+        beveragesDetailsScreen.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+            beveragesDetailsScreen.classList.add('active');
+            // GSAP stagger-in transitions
+            gsap.fromTo('#beveragesDetailsScreen .pasta-detail-card', 
+                { opacity: 0, y: 35 }, 
+                { opacity: 1, y: 0, duration: 0.6, stagger: 0.15, ease: 'power2.out', delay: 0.1 }
+            );
+            gsap.fromTo('#beveragesDetailsScreen .floating-ingredient',
+                { opacity: 0, scale: 0.5 },
+                { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
+            );
+        }, 10);
+    }
+}
+
+if (beveragesCard) {
+    const beveragesCta = beveragesCard.querySelector('.dish-cta');
+    if (beveragesCta) {
+        beveragesCta.addEventListener('click', (e) => {
+            e.preventDefault();
+            openBeveragesDetails();
+        });
+    }
+}
+
+if (backToMenuBtnBeverages) {
+    backToMenuBtnBeverages.addEventListener('click', () => {
+        if (beveragesDetailsScreen) {
+            beveragesDetailsScreen.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                beveragesDetailsScreen.style.display = 'none';
+            }, 400);
+        }
+    });
+}
+
+// Dedicated Full Screen Extra Toppings View Navigation Handler
+const toppingsDetailsScreen = document.getElementById('toppingsDetailsScreen');
+const backToMenuBtnToppings = document.getElementById('backToMenuBtnToppings');
+const toppingsCard = document.querySelector('.dish-card-3d[data-category="extra-topping"]');
+
+function openToppingsDetails() {
+    if (toppingsDetailsScreen) {
+        toppingsDetailsScreen.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+            toppingsDetailsScreen.classList.add('active');
+            // GSAP stagger-in transitions
+            gsap.fromTo('#toppingsDetailsScreen .topping-item-card', 
+                { opacity: 0, scale: 0.85, y: 30 }, 
+                { opacity: 1, scale: 1, y: 0, duration: 0.6, stagger: 0.1, ease: 'back.out(1.5)', delay: 0.1 }
+            );
+            gsap.fromTo('#toppingsDetailsScreen .floating-ingredient',
+                { opacity: 0, scale: 0.5 },
+                { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
+            );
+        }, 10);
+    }
+}
+
+if (toppingsCard) {
+    const toppingsCta = toppingsCard.querySelector('.dish-cta');
+    if (toppingsCta) {
+        toppingsCta.addEventListener('click', (e) => {
+            e.preventDefault();
+            openToppingsDetails();
+        });
+    }
+}
+
+if (backToMenuBtnToppings) {
+    backToMenuBtnToppings.addEventListener('click', () => {
+        if (toppingsDetailsScreen) {
+            toppingsDetailsScreen.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                toppingsDetailsScreen.style.display = 'none';
+            }, 400);
+        }
+    });
+}
+
+// Dedicated Full Screen Hot Beverages View Navigation Handler
+const hotBeveragesDetailsScreen = document.getElementById('hotBeveragesDetailsScreen');
+const backToMenuBtnHotBeverages = document.getElementById('backToMenuBtnHotBeverages');
+const hotBeveragesCard = document.querySelector('.dish-card-3d[data-category="hot-beverages"]');
+
+function openHotBeveragesDetails() {
+    if (hotBeveragesDetailsScreen) {
+        hotBeveragesDetailsScreen.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+            hotBeveragesDetailsScreen.classList.add('active');
+            // GSAP stagger-in transitions
+            gsap.fromTo('#hotBeveragesDetailsScreen .pasta-detail-card', 
+                { opacity: 0, y: 35 }, 
+                { opacity: 1, y: 0, duration: 0.6, stagger: 0.12, ease: 'power2.out', delay: 0.1 }
+            );
+            gsap.fromTo('#hotBeveragesDetailsScreen .floating-ingredient',
+                { opacity: 0, scale: 0.5 },
+                { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
+            );
+        }, 10);
+    }
+}
+
+if (hotBeveragesCard) {
+    const hotBeveragesCta = hotBeveragesCard.querySelector('.dish-cta');
+    if (hotBeveragesCta) {
+        hotBeveragesCta.addEventListener('click', (e) => {
+            e.preventDefault();
+            openHotBeveragesDetails();
+        });
+    }
+}
+
+if (backToMenuBtnHotBeverages) {
+    backToMenuBtnHotBeverages.addEventListener('click', () => {
+        if (hotBeveragesDetailsScreen) {
+            hotBeveragesDetailsScreen.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                hotBeveragesDetailsScreen.style.display = 'none';
+            }, 400);
+        }
+    });
+}
+
+// Dedicated Full Screen Cold Coffee View Navigation Handler
+const coldCoffeeDetailsScreen = document.getElementById('coldCoffeeDetailsScreen');
+const backToMenuBtnColdCoffee = document.getElementById('backToMenuBtnColdCoffee');
+const coldCoffeeCard = document.querySelector('.dish-card-3d[data-category="cold-coffee"]');
+
+function openColdCoffeeDetails() {
+    if (coldCoffeeDetailsScreen) {
+        coldCoffeeDetailsScreen.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+            coldCoffeeDetailsScreen.classList.add('active');
+            // GSAP stagger-in transitions
+            gsap.fromTo('#coldCoffeeDetailsScreen .pasta-detail-card', 
+                { opacity: 0, y: 35 }, 
+                { opacity: 1, y: 0, duration: 0.6, stagger: 0.15, ease: 'power2.out', delay: 0.1 }
+            );
+            gsap.fromTo('#coldCoffeeDetailsScreen .floating-ingredient',
+                { opacity: 0, scale: 0.5 },
+                { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
+            );
+        }, 10);
+    }
+}
+
+if (coldCoffeeCard) {
+    const coldCoffeeCta = coldCoffeeCard.querySelector('.dish-cta');
+    if (coldCoffeeCta) {
+        coldCoffeeCta.addEventListener('click', (e) => {
+            e.preventDefault();
+            openColdCoffeeDetails();
+        });
+    }
+}
+
+if (backToMenuBtnColdCoffee) {
+    backToMenuBtnColdCoffee.addEventListener('click', () => {
+        if (coldCoffeeDetailsScreen) {
+            coldCoffeeDetailsScreen.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                coldCoffeeDetailsScreen.style.display = 'none';
+            }, 400);
+        }
+    });
+}
+
+// Dedicated Full Screen Ice Cream View Navigation Handler
+const iceCreamDetailsScreen = document.getElementById('iceCreamDetailsScreen');
+const backToMenuBtnIceCream = document.getElementById('backToMenuBtnIceCream');
+const iceCreamCard = document.querySelector('.dish-card-3d[data-category="ice-cream"]');
+
+function openIceCreamDetails() {
+    if (iceCreamDetailsScreen) {
+        iceCreamDetailsScreen.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+            iceCreamDetailsScreen.classList.add('active');
+            // GSAP transitions
+            gsap.fromTo('#iceCreamDetailsScreen .burger-item-row', 
+                { opacity: 0, y: 15 }, 
+                { opacity: 1, y: 0, duration: 0.4, stagger: 0.08, ease: 'power2.out', delay: 0.2 }
+            );
+            gsap.fromTo('#iceCreamDetailsScreen .floating-ingredient',
+                { opacity: 0, scale: 0.5 },
+                { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
+            );
+        }, 10);
+    }
+}
+
+if (iceCreamCard) {
+    const iceCreamCta = iceCreamCard.querySelector('.dish-cta');
+    if (iceCreamCta) {
+        iceCreamCta.addEventListener('click', (e) => {
+            e.preventDefault();
+            openIceCreamDetails();
+        });
+    }
+}
+
+if (backToMenuBtnIceCream) {
+    backToMenuBtnIceCream.addEventListener('click', () => {
+        if (iceCreamDetailsScreen) {
+            iceCreamDetailsScreen.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                iceCreamDetailsScreen.style.display = 'none';
+            }, 400);
+        }
+    });
+}
+
+// Dedicated Full Screen Mocktails View Navigation Handler
+const mocktailsDetailsScreen = document.getElementById('mocktailsDetailsScreen');
+const backToMenuBtnMocktails = document.getElementById('backToMenuBtnMocktails');
+const mocktailsCard = document.querySelector('.dish-card-3d[data-category="mocktails"]');
+
+function openMocktailsDetails() {
+    if (mocktailsDetailsScreen) {
+        mocktailsDetailsScreen.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+            mocktailsDetailsScreen.classList.add('active');
+            // GSAP stagger-in transitions
+            gsap.fromTo('#mocktailsDetailsScreen .pasta-detail-card', 
+                { opacity: 0, y: 35 }, 
+                { opacity: 1, y: 0, duration: 0.6, stagger: 0.15, ease: 'power2.out', delay: 0.1 }
+            );
+            gsap.fromTo('#mocktailsDetailsScreen .floating-ingredient',
+                { opacity: 0, scale: 0.5 },
+                { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
+            );
+        }, 10);
+    }
+}
+
+if (mocktailsCard) {
+    const mocktailsCta = mocktailsCard.querySelector('.dish-cta');
+    if (mocktailsCta) {
+        mocktailsCta.addEventListener('click', (e) => {
+            e.preventDefault();
+            openMocktailsDetails();
+        });
+    }
+}
+
+if (backToMenuBtnMocktails) {
+    backToMenuBtnMocktails.addEventListener('click', () => {
+        if (mocktailsDetailsScreen) {
+            mocktailsDetailsScreen.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                mocktailsDetailsScreen.style.display = 'none';
+            }, 400);
+        }
+    });
+}
+
+// Dedicated Full Screen Mojito View Navigation Handler
+const mojitoDetailsScreen = document.getElementById('mojitoDetailsScreen');
+const backToMenuBtnMojito = document.getElementById('backToMenuBtnMojito');
+const mojitoCard = document.querySelector('.dish-card-3d[data-category="mojito"]');
+
+function openMojitoDetails() {
+    if (mojitoDetailsScreen) {
+        mojitoDetailsScreen.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+            mojitoDetailsScreen.classList.add('active');
+            // GSAP stagger-in transitions
+            gsap.fromTo('#mojitoDetailsScreen .pasta-detail-card', 
+                { opacity: 0, y: 35 }, 
+                { opacity: 1, y: 0, duration: 0.6, stagger: 0.15, ease: 'power2.out', delay: 0.1 }
+            );
+            gsap.fromTo('#mojitoDetailsScreen .floating-ingredient',
+                { opacity: 0, scale: 0.5 },
+                { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
+            );
+        }, 10);
+    }
+}
+
+if (mojitoCard) {
+    const mojitoCta = mojitoCard.querySelector('.dish-cta');
+    if (mojitoCta) {
+        mojitoCta.addEventListener('click', (e) => {
+            e.preventDefault();
+            openMojitoDetails();
+        });
+    }
+}
+
+if (backToMenuBtnMojito) {
+    backToMenuBtnMojito.addEventListener('click', () => {
+        if (mojitoDetailsScreen) {
+            mojitoDetailsScreen.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                mojitoDetailsScreen.style.display = 'none';
+            }, 400);
+        }
+    });
+}
+
+// Dedicated Full Screen Smoothies View Navigation Handler
+const smoothiesDetailsScreen = document.getElementById('smoothiesDetailsScreen');
+const backToMenuBtnSmoothies = document.getElementById('backToMenuBtnSmoothies');
+const smoothiesCard = document.querySelector('.dish-card-3d[data-category="smoothies"]');
+
+function openSmoothiesDetails() {
+    if (smoothiesDetailsScreen) {
+        smoothiesDetailsScreen.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+            smoothiesDetailsScreen.classList.add('active');
+            // GSAP stagger-in transitions
+            gsap.fromTo('#smoothiesDetailsScreen .pasta-detail-card', 
+                { opacity: 0, y: 35 }, 
+                { opacity: 1, y: 0, duration: 0.6, stagger: 0.15, ease: 'power2.out', delay: 0.1 }
+            );
+            gsap.fromTo('#smoothiesDetailsScreen .floating-ingredient',
+                { opacity: 0, scale: 0.5 },
+                { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
+            );
+        }, 10);
+    }
+}
+
+if (smoothiesCard) {
+    const smoothiesCta = smoothiesCard.querySelector('.dish-cta');
+    if (smoothiesCta) {
+        smoothiesCta.addEventListener('click', (e) => {
+            e.preventDefault();
+            openSmoothiesDetails();
+        });
+    }
+}
+
+if (backToMenuBtnSmoothies) {
+    backToMenuBtnSmoothies.addEventListener('click', () => {
+        if (smoothiesDetailsScreen) {
+            smoothiesDetailsScreen.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                smoothiesDetailsScreen.style.display = 'none';
+            }, 400);
+        }
+    });
+}
+
+// Dedicated Full Screen Ice Shakes View Navigation Handler
+const iceShakesDetailsScreen = document.getElementById('iceShakesDetailsScreen');
+const backToMenuBtnIceShakes = document.getElementById('backToMenuBtnIceShakes');
+const iceShakesCard = document.querySelector('.dish-card-3d[data-category="ice-shakes"]');
+
+function openIceShakesDetails() {
+    if (iceShakesDetailsScreen) {
+        iceShakesDetailsScreen.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+            iceShakesDetailsScreen.classList.add('active');
+            // GSAP stagger-in transitions
+            gsap.fromTo('#iceShakesDetailsScreen .pasta-detail-card', 
+                { opacity: 0, y: 35 }, 
+                { opacity: 1, y: 0, duration: 0.6, stagger: 0.15, ease: 'power2.out', delay: 0.1 }
+            );
+            gsap.fromTo('#iceShakesDetailsScreen .floating-ingredient',
+                { opacity: 0, scale: 0.5 },
+                { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
+            );
+        }, 10);
+    }
+}
+
+if (iceShakesCard) {
+    const iceShakesCta = iceShakesCard.querySelector('.dish-cta');
+    if (iceShakesCta) {
+        iceShakesCta.addEventListener('click', (e) => {
+            e.preventDefault();
+            openIceShakesDetails();
+        });
+    }
+}
+
+if (backToMenuBtnIceShakes) {
+    backToMenuBtnIceShakes.addEventListener('click', () => {
+        if (iceShakesDetailsScreen) {
+            iceShakesDetailsScreen.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                iceShakesDetailsScreen.style.display = 'none';
+            }, 400);
+        }
+    });
+}
+
+// Dedicated Full Screen Milk Shakes View Navigation Handler
+const milkShakesDetailsScreen = document.getElementById('milkShakesDetailsScreen');
+const backToMenuBtnMilkShakes = document.getElementById('backToMenuBtnMilkShakes');
+const milkShakesCard = document.querySelector('.dish-card-3d[data-category="milk-shakes"]');
+
+function openMilkShakesDetails() {
+    if (milkShakesDetailsScreen) {
+        milkShakesDetailsScreen.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+            milkShakesDetailsScreen.classList.add('active');
+            // GSAP stagger-in transitions (uses 2x2 grid)
+            gsap.fromTo('#milkShakesDetailsScreen .pasta-detail-card', 
+                { opacity: 0, y: 35 }, 
+                { opacity: 1, y: 0, duration: 0.6, stagger: 0.15, ease: 'power2.out', delay: 0.1 }
+            );
+            gsap.fromTo('#milkShakesDetailsScreen .floating-ingredient',
+                { opacity: 0, scale: 0.5 },
+                { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
+            );
+        }, 10);
+    }
+}
+
+if (milkShakesCard) {
+    const milkShakesCta = milkShakesCard.querySelector('.dish-cta');
+    if (milkShakesCta) {
+        milkShakesCta.addEventListener('click', (e) => {
+            e.preventDefault();
+            openMilkShakesDetails();
+        });
+    }
+}
+
+if (backToMenuBtnMilkShakes) {
+    backToMenuBtnMilkShakes.addEventListener('click', () => {
+        if (milkShakesDetailsScreen) {
+            milkShakesDetailsScreen.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                milkShakesDetailsScreen.style.display = 'none';
+            }, 400);
+        }
+    });
+}
+
+// Dedicated Full Screen Soft Drinks View Navigation Handler
+const softDrinksDetailsScreen = document.getElementById('softDrinksDetailsScreen');
+const backToMenuBtnSoftDrinks = document.getElementById('backToMenuBtnSoftDrinks');
+const softDrinksCard = document.querySelector('.dish-card-3d[data-category="soft-drinks"]');
+
+function openSoftDrinksDetails() {
+    if (softDrinksDetailsScreen) {
+        softDrinksDetailsScreen.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+            softDrinksDetailsScreen.classList.add('active');
+            // GSAP transitions
+            gsap.fromTo('#softDrinksDetailsScreen .pasta-detail-card', 
+                { opacity: 0, y: 35 }, 
+                { opacity: 1, y: 0, duration: 0.6, stagger: 0.15, ease: 'power2.out', delay: 0.1 }
+            );
+            gsap.fromTo('#softDrinksDetailsScreen .floating-ingredient',
+                { opacity: 0, scale: 0.5 },
+                { opacity: 0.8, scale: 1, duration: 0.8, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.4 }
+            );
+        }, 10);
+    }
+}
+
+if (softDrinksCard) {
+    const softDrinksCta = softDrinksCard.querySelector('.dish-cta');
+    if (softDrinksCta) {
+        softDrinksCta.addEventListener('click', (e) => {
+            e.preventDefault();
+            openSoftDrinksDetails();
+        });
+    }
+}
+
+if (backToMenuBtnSoftDrinks) {
+    backToMenuBtnSoftDrinks.addEventListener('click', () => {
+        if (softDrinksDetailsScreen) {
+            softDrinksDetailsScreen.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                softDrinksDetailsScreen.style.display = 'none';
+            }, 400);
+        }
+    });
+}
+
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         if (pizzaDetailsScreen && pizzaDetailsScreen.classList.contains('active')) {
@@ -756,6 +1308,66 @@ document.addEventListener('keydown', (e) => {
             appetizerDetailsScreen.classList.remove('active');
             document.body.style.overflow = '';
             setTimeout(() => { appetizerDetailsScreen.style.display = 'none'; }, 400);
+        }
+        if (friesDetailsScreen && friesDetailsScreen.classList.contains('active')) {
+            friesDetailsScreen.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => { friesDetailsScreen.style.display = 'none'; }, 400);
+        }
+        if (beveragesDetailsScreen && beveragesDetailsScreen.classList.contains('active')) {
+            beveragesDetailsScreen.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => { beveragesDetailsScreen.style.display = 'none'; }, 400);
+        }
+        if (toppingsDetailsScreen && toppingsDetailsScreen.classList.contains('active')) {
+            toppingsDetailsScreen.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => { toppingsDetailsScreen.style.display = 'none'; }, 400);
+        }
+        if (hotBeveragesDetailsScreen && hotBeveragesDetailsScreen.classList.contains('active')) {
+            hotBeveragesDetailsScreen.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => { hotBeveragesDetailsScreen.style.display = 'none'; }, 400);
+        }
+        if (coldCoffeeDetailsScreen && coldCoffeeDetailsScreen.classList.contains('active')) {
+            coldCoffeeDetailsScreen.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => { coldCoffeeDetailsScreen.style.display = 'none'; }, 400);
+        }
+        if (iceCreamDetailsScreen && iceCreamDetailsScreen.classList.contains('active')) {
+            iceCreamDetailsScreen.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => { iceCreamDetailsScreen.style.display = 'none'; }, 400);
+        }
+        if (mocktailsDetailsScreen && mocktailsDetailsScreen.classList.contains('active')) {
+            mocktailsDetailsScreen.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => { mocktailsDetailsScreen.style.display = 'none'; }, 400);
+        }
+        if (mojitoDetailsScreen && mojitoDetailsScreen.classList.contains('active')) {
+            mojitoDetailsScreen.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => { mojitoDetailsScreen.style.display = 'none'; }, 400);
+        }
+        if (smoothiesDetailsScreen && smoothiesDetailsScreen.classList.contains('active')) {
+            smoothiesDetailsScreen.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => { smoothiesDetailsScreen.style.display = 'none'; }, 400);
+        }
+        if (iceShakesDetailsScreen && iceShakesDetailsScreen.classList.contains('active')) {
+            iceShakesDetailsScreen.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => { iceShakesDetailsScreen.style.display = 'none'; }, 400);
+        }
+        if (milkShakesDetailsScreen && milkShakesDetailsScreen.classList.contains('active')) {
+            milkShakesDetailsScreen.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => { milkShakesDetailsScreen.style.display = 'none'; }, 400);
+        }
+        if (softDrinksDetailsScreen && softDrinksDetailsScreen.classList.contains('active')) {
+            softDrinksDetailsScreen.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => { softDrinksDetailsScreen.style.display = 'none'; }, 400);
         }
     }
 });

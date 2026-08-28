@@ -2959,6 +2959,586 @@ body {
     animation: float-drift-1 12s ease-in-out infinite 1.5s;
 }
 
+/* ==========================================================================
+   Dedicated Premium Fries View Styling (Modern Red & White Theme)
+   ========================================================================== */
+.fries-full-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #FFFFFF;
+    color: #1A1A1A;
+    z-index: 99999;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.fries-full-screen.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Positioning & Floating Animations for Fries Background Elements */
+.fries-bg-fry {
+    top: 14%;
+    left: 5%;
+    animation: float-drift-1 12s ease-in-out infinite;
+}
+
+.fries-bg-cheese {
+    top: 24%;
+    right: 6%;
+    animation: float-drift-2 14s ease-in-out infinite 0.5s;
+}
+
+.fries-bg-spice {
+    bottom: 26%;
+    left: 4%;
+    animation: float-drift-1 10s ease-in-out infinite 1.5s;
+}
+
+/* ==========================================================================
+   Dedicated Premium Beverages View Styling (Modern Red & White Theme)
+   ========================================================================== */
+.beverages-full-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #FFFFFF;
+    color: #1A1A1A;
+    z-index: 99999;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.beverages-full-screen.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Positioning & Floating Animations for Beverages Background Elements */
+.beverage-bg-ice {
+    top: 15%;
+    left: 5%;
+    animation: float-drift-1 13s ease-in-out infinite;
+}
+
+.beverage-bg-lemon {
+    top: 25%;
+    right: 6%;
+    animation: float-drift-2 15s ease-in-out infinite 0.5s;
+}
+
+.beverage-bg-mint {
+    bottom: 27%;
+    left: 4%;
+    animation: float-drift-1 11s ease-in-out infinite 1.5s;
+}
+
+/* ==========================================================================
+   Dedicated Premium Extra Toppings View Styling (Modern Red & White Theme)
+   ========================================================================== */
+.toppings-full-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #FFFFFF;
+    color: #1A1A1A;
+    z-index: 99999;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.toppings-full-screen.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Positioning & Floating Animations for Toppings Background Elements */
+.toppings-bg-jalapeno {
+    top: 14%;
+    left: 5%;
+    animation: float-drift-1 12s ease-in-out infinite;
+}
+
+.toppings-bg-cheese {
+    top: 24%;
+    right: 6%;
+    animation: float-drift-2 14s ease-in-out infinite 0.5s;
+}
+
+.toppings-bg-sauce {
+    bottom: 26%;
+    left: 4%;
+    animation: float-drift-1 10s ease-in-out infinite 1.5s;
+}
+
+/* Toppings Grid and Cards Layout */
+.toppings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.topping-item-card {
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 30px 24px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.topping-item-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.07);
+}
+
+.topping-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(211, 47, 47, 0.05);
+    color: #D32F2F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.topping-item-card:hover .topping-icon-wrapper {
+    transform: scale(1.08) rotate(5deg);
+    background: #D32F2F;
+    color: #FFFFFF;
+}
+
+.topping-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #222222;
+    margin-bottom: 20px;
+}
+
+.topping-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: auto;
+}
+
+.topping-footer .item-price-badge {
+    position: static;
+    background: #D32F2F;
+    color: #FFFFFF;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.88rem;
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.25);
+}
+
+.topping-add-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(211, 47, 47, 0.08);
+    color: #D32F2F;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.topping-add-btn:hover {
+    background: #D32F2F;
+    color: #FFFFFF;
+    transform: scale(1.1);
+}
+
+.topping-add-btn:active {
+    transform: scale(0.95);
+}
+
+/* Breakpoint rules for toppings card grid */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .toppings-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .toppings-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .topping-item-card {
+        padding: 24px 20px;
+    }
+}
+
+/* ==========================================================================
+   Dedicated Premium Hot Beverages View Styling
+   ========================================================================== */
+.hot-beverages-full-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #FFFFFF;
+    color: #1A1A1A;
+    z-index: 99999;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.hot-beverages-full-screen.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Positioning & Floating Animations for Hot Beverages Background Elements */
+.hot-bg-bean {
+    top: 14%;
+    left: 5%;
+    animation: float-drift-1 12s ease-in-out infinite;
+}
+
+.hot-bg-leaf {
+    top: 24%;
+    right: 6%;
+    animation: float-drift-2 14s ease-in-out infinite 0.5s;
+}
+
+.hot-bg-cinnamon {
+    bottom: 26%;
+    left: 4%;
+    animation: float-drift-1 10s ease-in-out infinite 1.5s;
+}
+
+/* ==========================================================================
+   Dedicated Premium Cold Coffee View Styling
+   ========================================================================== */
+.cold-coffee-full-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #FFFFFF;
+    color: #1A1A1A;
+    z-index: 99999;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.cold-coffee-full-screen.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Positioning & Floating Animations for Cold Coffee Background Elements */
+.cold-bg-bean {
+    top: 15%;
+    left: 5%;
+    animation: float-drift-1 11s ease-in-out infinite;
+}
+
+.cold-bg-ice {
+    bottom: 27%;
+    right: 6%;
+    animation: float-drift-2 13s ease-in-out infinite 0.5s;
+}
+
+/* ==========================================================================
+   Dedicated Premium Ice Cream View Styling
+   ========================================================================== */
+.ice-cream-full-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #FFFFFF;
+    color: #1A1A1A;
+    z-index: 99999;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.ice-cream-full-screen.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Positioning & Floating Animations for Ice Cream Background Elements */
+.ice-bg-cone {
+    top: 14%;
+    left: 5%;
+    animation: float-drift-1 12s ease-in-out infinite;
+}
+
+.ice-bg-strawberry {
+    top: 24%;
+    right: 6%;
+    animation: float-drift-2 14s ease-in-out infinite 0.5s;
+}
+
+/* ==========================================================================
+   Dedicated Premium Mocktails View Styling
+   ========================================================================== */
+.mocktails-full-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #FFFFFF;
+    color: #1A1A1A;
+    z-index: 99999;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.mocktails-full-screen.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Positioning & Floating Animations for Mocktails Background Elements */
+.mocktail-bg-pineapple {
+    top: 15%;
+    left: 5%;
+    animation: float-drift-1 11s ease-in-out infinite;
+}
+
+.mocktail-bg-mint {
+    top: 25%;
+    right: 6%;
+    animation: float-drift-2 13s ease-in-out infinite 0.5s;
+}
+
+.mocktail-bg-lemon {
+    bottom: 27%;
+    left: 4%;
+    animation: float-drift-1 12s ease-in-out infinite 1s;
+}
+
+/* ==========================================================================
+   Dedicated Premium Mojito View Styling
+   ========================================================================== */
+.mojito-full-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #FFFFFF;
+    color: #1A1A1A;
+    z-index: 99999;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.mojito-full-screen.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Positioning & Floating Animations for Mojito Background Elements */
+.mojito-bg-ice {
+    top: 15%;
+    left: 5%;
+    animation: float-drift-1 11s ease-in-out infinite;
+}
+
+.mojito-bg-mint {
+    top: 25%;
+    right: 6%;
+    animation: float-drift-2 13s ease-in-out infinite 0.5s;
+}
+
+/* ==========================================================================
+   Dedicated Premium Smoothies View Styling
+   ========================================================================== */
+.smoothies-full-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #FFFFFF;
+    color: #1A1A1A;
+    z-index: 99999;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.smoothies-full-screen.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Positioning & Floating Animations for Smoothies Background Elements */
+.smoothie-bg-strawberry {
+    top: 14%;
+    left: 5%;
+    animation: float-drift-1 12s ease-in-out infinite;
+}
+
+.smoothie-bg-mango {
+    top: 24%;
+    right: 6%;
+    animation: float-drift-2 14s ease-in-out infinite 0.5s;
+}
+
+/* ==========================================================================
+   Dedicated Premium Ice Shakes View Styling
+   ========================================================================== */
+.ice-shakes-full-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #FFFFFF;
+    color: #1A1A1A;
+    z-index: 99999;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.ice-shakes-full-screen.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Positioning & Floating Animations for Ice Shakes Background Elements */
+.shake-bg-cherry {
+    top: 15%;
+    left: 5%;
+    animation: float-drift-1 11s ease-in-out infinite;
+}
+
+.shake-bg-chocolate {
+    bottom: 27%;
+    right: 6%;
+    animation: float-drift-2 13s ease-in-out infinite 0.5s;
+}
+
+/* ==========================================================================
+   Dedicated Premium Milk Shakes View Styling
+   ========================================================================== */
+.milk-shakes-full-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #FFFFFF;
+    color: #1A1A1A;
+    z-index: 99999;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.milk-shakes-full-screen.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Positioning & Floating Animations for Milk Shakes Background Elements */
+.milk-bg-apple {
+    top: 14%;
+    left: 5%;
+    animation: float-drift-1 12s ease-in-out infinite;
+}
+
+.milk-bg-banana {
+    top: 24%;
+    right: 6%;
+    animation: float-drift-2 14s ease-in-out infinite 0.5s;
+}
+
+/* ==========================================================================
+   Dedicated Premium Soft Drinks View Styling
+   ========================================================================== */
+.soft-drinks-full-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #FFFFFF;
+    color: #1A1A1A;
+    z-index: 99999;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.soft-drinks-full-screen.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Positioning & Floating Animations for Soft Drinks Background Elements */
+.soft-bg-lime {
+    top: 15%;
+    left: 5%;
+    animation: float-drift-1 11s ease-in-out infinite;
+}
+
+.soft-bg-mint {
+    bottom: 27%;
+    right: 6%;
+    animation: float-drift-2 13s ease-in-out infinite 0.5s;
+}
+
+
+
 
 
 

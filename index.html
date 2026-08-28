@@ -1572,6 +1572,1660 @@
         </div>
     </div>
 
+    <!-- Dedicated Full Screen Fries View -->
+    <div class="fries-full-screen" id="friesDetailsScreen" style="display: none;">
+        <!-- Floating Decorative Ingredients -->
+        <div class="floating-ingredients-container">
+            <!-- Fry SVG -->
+            <div class="floating-ingredient fries-bg-fry">
+                <svg viewBox="0 0 100 100" width="55" height="55">
+                    <rect x="35" y="15" width="12" height="70" rx="3" fill="#FDD835" opacity="0.15" transform="rotate(35 41 50)"/>
+                    <rect x="35" y="15" width="12" height="70" rx="3" fill="none" stroke="#F57F17" stroke-width="1.5" transform="rotate(35 41 50)"/>
+                </svg>
+            </div>
+            <!-- Cheese sauce drop -->
+            <div class="floating-ingredient fries-bg-cheese">
+                <svg viewBox="0 0 100 100" width="60" height="60">
+                    <path d="M50 20 Q30 50 50 80 Q70 50 50 20" fill="#FFB300" opacity="0.12"/>
+                    <path d="M50 20 Q30 50 50 80 Q70 50 50 20" fill="none" stroke="#FF8F00" stroke-width="1.5"/>
+                </svg>
+            </div>
+            <!-- Spice SVG -->
+            <div class="floating-ingredient fries-bg-spice">
+                <svg viewBox="0 0 100 100" width="50" height="50">
+                    <circle cx="30" cy="30" r="3" fill="#C62828" opacity="0.4"/>
+                    <circle cx="50" cy="40" r="2.5" fill="#C62828" opacity="0.4"/>
+                    <circle cx="40" cy="60" r="3" fill="#C62828" opacity="0.4"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="burger-screen-top-bar">
+            <button class="back-to-menu-btn" id="backToMenuBtnFries">
+                <i class="fas fa-arrow-left"></i> Back to Menu
+            </button>
+            <div class="screen-brand">
+                <img src="assets/images/logo.png" alt="HungryHowies" class="screen-logo">
+            </div>
+        </div>
+
+        <div class="burger-screen-content container">
+            <!-- Header Section with Fries Hero Layout -->
+            <div class="burger-header-grid">
+                <div class="burger-header-text">
+                    <div class="burger-cloche-icon">
+                        <span class="flourish-line"></span>
+                        <i class="fas fa-utensils red-cloche"></i>
+                        <span class="flourish-line"></span>
+                    </div>
+                    <h2 class="burger-title">
+                        <span class="title-dark">OUR FRIES</span><br>
+                        <span class="title-red">SELECTION</span>
+                    </h2>
+                    <div class="star-flourish">
+                        <span class="star-line"></span>
+                        <span class="stars">★ ★ ★ ★ ★</span>
+                        <span class="star-line"></span>
+                    </div>
+                    <p class="burger-subtitle">Golden crispy fries loaded with delicious toppings, signature sauces, premium seasonings, and irresistible flavors.</p>
+                </div>
+                <div class="burger-header-image">
+                    <img src="assets/images/fries_hero.jpg" alt="Fries Selection" class="burger-hero-img">
+                </div>
+            </div>
+
+            <!-- Fries Items Grid of Cards -->
+            <div class="pasta-cards-grid">
+                <!-- 1. Hungry Loaded Fries -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/fries_hero.jpg" alt="Hungry Loaded Fries" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-749</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Hungry Loaded Fries</h4>
+                        <p>Crispy fries topped with premium sauces, cheese, and signature loaded toppings.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium signature"><i class="fas fa-crown"></i> House Special</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Honey Mustard Fries -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/fries_hero.jpg" alt="Honey Mustard Fries" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-449</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Honey Mustard Fries</h4>
+                        <p>Golden fries coated with rich honey mustard sauce for a sweet and tangy flavor.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium"><i class="fas fa-award"></i> Sweet & Tangy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Garlic Mayo Fries -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/fries_hero.jpg" alt="Garlic Mayo Fries" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-499</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Garlic Mayo Fries</h4>
+                        <p>Freshly cooked fries served with creamy garlic mayonnaise.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium"><i class="fas fa-star"></i> Creamy Classic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Masala Fries -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/fries_hero.jpg" alt="Masala Fries" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-299</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Masala Fries</h4>
+                        <p>Crispy fries tossed with flavorful house special masala seasoning.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium spicy"><i class="fas fa-pepper-hot"></i> Spicy Masala</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Plain Fries -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/fries_hero.jpg" alt="Plain Fries" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-279</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Plain Fries</h4>
+                        <p>Classic golden fries cooked to perfection with a crispy exterior.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium signature"><i class="fas fa-smile"></i> Plain Salted</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. BBQ Fries -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/fries_hero.jpg" alt="BBQ Fries" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-449</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>BBQ Fries</h4>
+                        <p>Loaded with smoky BBQ flavor and premium seasonings.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium spicy"><i class="fas fa-fire"></i> Smoky BBQ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dedicated Full Screen Beverages View -->
+    <div class="beverages-full-screen" id="beveragesDetailsScreen" style="display: none;">
+        <!-- Floating Decorative Ingredients -->
+        <div class="floating-ingredients-container">
+            <!-- Ice cube -->
+            <div class="floating-ingredient beverage-bg-ice">
+                <svg viewBox="0 0 100 100" width="55" height="55">
+                    <rect x="25" y="25" width="50" height="50" rx="6" fill="#E0F7FA" opacity="0.18"/>
+                    <rect x="25" y="25" width="50" height="50" rx="6" fill="none" stroke="#80DEEA" stroke-width="1.5"/>
+                </svg>
+            </div>
+            <!-- Lemon slice -->
+            <div class="floating-ingredient beverage-bg-lemon">
+                <svg viewBox="0 0 100 100" width="60" height="60">
+                    <circle cx="50" cy="50" r="30" fill="#FFEB3B" opacity="0.15"/>
+                    <circle cx="50" cy="50" r="30" fill="none" stroke="#FBC02D" stroke-width="2"/>
+                </svg>
+            </div>
+            <!-- Mint leaf -->
+            <div class="floating-ingredient beverage-bg-mint">
+                <svg viewBox="0 0 100 100" width="50" height="50">
+                    <path d="M50 80 C30 60, 20 40, 50 15 C80 40, 70 60, 50 80 Z" fill="#81C784" opacity="0.15"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="burger-screen-top-bar">
+            <button class="back-to-menu-btn" id="backToMenuBtnBeverages">
+                <i class="fas fa-arrow-left"></i> Back to Menu
+            </button>
+            <div class="screen-brand">
+                <img src="assets/images/logo.png" alt="HungryHowies" class="screen-logo">
+            </div>
+        </div>
+
+        <div class="burger-screen-content container">
+            <!-- Header Section with Beverages Hero Layout -->
+            <div class="burger-header-grid">
+                <div class="burger-header-text">
+                    <div class="burger-cloche-icon">
+                        <span class="flourish-line"></span>
+                        <i class="fas fa-wine-glass-alt red-cloche"></i>
+                        <span class="flourish-line"></span>
+                    </div>
+                    <h2 class="burger-title">
+                        <span class="title-dark">OUR BEVERAGES</span><br>
+                        <span class="title-red">SELECTION</span>
+                    </h2>
+                    <div class="star-flourish">
+                        <span class="star-line"></span>
+                        <span class="stars">★ ★ ★ ★ ★</span>
+                        <span class="star-line"></span>
+                    </div>
+                    <p class="burger-subtitle">Refresh your meal with chilled beverages, soft drinks, and refreshing drinks served ice cold.</p>
+                </div>
+                <div class="burger-header-image">
+                    <img src="assets/images/beverages_hero.jpg" alt="Beverages Selection" class="burger-hero-img">
+                </div>
+            </div>
+
+            <!-- Beverages Items Grid of Cards -->
+            <div class="pasta-cards-grid">
+                <!-- 1. NR Coke -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/beverages_hero.jpg" alt="NR Coke" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-100</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>NR Coke</h4>
+                        <p>Refreshing Coca-Cola served chilled for the perfect meal companion.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium"><i class="fas fa-mug-hot"></i> Ice Cold</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. NR Sprite -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/beverages_hero.jpg" alt="NR Sprite" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-100</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>NR Sprite</h4>
+                        <p>Lemon-lime flavored soft drink with a crisp and refreshing taste.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium"><i class="fas fa-tint"></i> Citrus Fresh</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Coke Tin Pack -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/beverages_hero.jpg" alt="Coke Tin Pack" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-160</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Coke Tin Pack</h4>
+                        <p>Premium canned Coca-Cola served ice cold.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium signature"><i class="fas fa-beer"></i> Canned Classic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Sprite Tin Pack -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/beverages_hero.jpg" alt="Sprite Tin Pack" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-160</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Sprite Tin Pack</h4>
+                        <p>Refreshing canned Sprite with a crisp citrus flavor.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium signature"><i class="fas fa-beer"></i> Canned Citrus</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Mineral Water -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/beverages_hero.jpg" alt="Mineral Water" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-80</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Mineral Water</h4>
+                        <p>Pure and refreshing bottled mineral water.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium"><i class="fas fa-water"></i> Pure Spring</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dedicated Full Screen Extra Toppings View -->
+    <div class="toppings-full-screen" id="toppingsDetailsScreen" style="display: none;">
+        <!-- Floating Decorative Ingredients -->
+        <div class="floating-ingredients-container">
+            <!-- Jalapeno ring -->
+            <div class="floating-ingredient toppings-bg-jalapeno">
+                <svg viewBox="0 0 100 100" width="55" height="55">
+                    <circle cx="50" cy="50" r="28" fill="#4CAF50" opacity="0.15"/>
+                    <circle cx="50" cy="50" r="28" fill="none" stroke="#2E7D32" stroke-width="2"/>
+                </svg>
+            </div>
+            <!-- Cheese slice -->
+            <div class="floating-ingredient toppings-bg-cheese">
+                <svg viewBox="0 0 100 100" width="60" height="60">
+                    <rect x="25" y="25" width="50" height="50" rx="5" fill="#FDD835" opacity="0.15" transform="rotate(20 50 50)"/>
+                    <rect x="25" y="25" width="50" height="50" rx="5" fill="none" stroke="#F57F17" stroke-width="1.5" transform="rotate(20 50 50)"/>
+                </svg>
+            </div>
+            <!-- Sauce drop -->
+            <div class="floating-ingredient toppings-bg-sauce">
+                <svg viewBox="0 0 100 100" width="50" height="50">
+                    <path d="M50 20 Q35 50 50 80 Q65 50 50 20" fill="#D84315" opacity="0.12"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="burger-screen-top-bar">
+            <button class="back-to-menu-btn" id="backToMenuBtnToppings">
+                <i class="fas fa-arrow-left"></i> Back to Menu
+            </button>
+            <div class="screen-brand">
+                <img src="assets/images/logo.png" alt="HungryHowies" class="screen-logo">
+            </div>
+        </div>
+
+        <div class="burger-screen-content container">
+            <!-- Header Section with Toppings Hero Layout -->
+            <div class="burger-header-grid">
+                <div class="burger-header-text">
+                    <div class="burger-cloche-icon">
+                        <span class="flourish-line"></span>
+                        <i class="fas fa-plus-circle red-cloche"></i>
+                        <span class="flourish-line"></span>
+                    </div>
+                    <h2 class="burger-title">
+                        <span class="title-dark">EXTRA</span><br>
+                        <span class="title-red">TOPPING</span>
+                    </h2>
+                    <div class="star-flourish">
+                        <span class="star-line"></span>
+                        <span class="stars">★ ★ ★ ★ ★</span>
+                        <span class="star-line"></span>
+                    </div>
+                    <p class="burger-subtitle">Customize your favorite meal with delicious premium toppings and signature sauces.</p>
+                </div>
+                <div class="burger-header-image">
+                    <img src="assets/images/toppings_hero.jpg" alt="Extra Toppings" class="burger-hero-img">
+                </div>
+            </div>
+
+            <!-- Extra Toppings 3-Column Responsive Grid -->
+            <div class="toppings-grid">
+                <!-- 1. Chesse -->
+                <div class="topping-item-card">
+                    <div class="topping-icon-wrapper">
+                        <i class="fas fa-cheese"></i>
+                    </div>
+                    <h4 class="topping-name">Chesse</h4>
+                    <div class="topping-footer">
+                        <span class="item-price-badge">Rs/-200</span>
+                        <button class="topping-add-btn" aria-label="Add Chesse"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+
+                <!-- 2. BBQ Sauce -->
+                <div class="topping-item-card">
+                    <div class="topping-icon-wrapper">
+                        <i class="fas fa-fire-alt"></i>
+                    </div>
+                    <h4 class="topping-name">BBQ Sauce</h4>
+                    <div class="topping-footer">
+                        <span class="item-price-badge">Rs/-150</span>
+                        <button class="topping-add-btn" aria-label="Add BBQ Sauce"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+
+                <!-- 3. Garlic Mayo -->
+                <div class="topping-item-card">
+                    <div class="topping-icon-wrapper">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h4 class="topping-name">Garlic Mayo</h4>
+                    <div class="topping-footer">
+                        <span class="item-price-badge">Rs/-150</span>
+                        <button class="topping-add-btn" aria-label="Add Garlic Mayo"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+
+                <!-- 4. Mash Potato -->
+                <div class="topping-item-card">
+                    <div class="topping-icon-wrapper">
+                        <i class="fas fa-spoon"></i>
+                    </div>
+                    <h4 class="topping-name">Mash Potato</h4>
+                    <div class="topping-footer">
+                        <span class="item-price-badge">Rs/-250</span>
+                        <button class="topping-add-btn" aria-label="Add Mash Potato"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+
+                <!-- 5. Jalapino Sauce -->
+                <div class="topping-item-card">
+                    <div class="topping-icon-wrapper">
+                        <i class="fas fa-pepper-hot"></i>
+                    </div>
+                    <h4 class="topping-name">Jalapino Sauce</h4>
+                    <div class="topping-footer">
+                        <span class="item-price-badge">Rs/-150</span>
+                        <button class="topping-add-btn" aria-label="Add Jalapino Sauce"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+
+                <!-- 6. Honey Mustard -->
+                <div class="topping-item-card">
+                    <div class="topping-icon-wrapper">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h4 class="topping-name">Honey Mustard</h4>
+                    <div class="topping-footer">
+                        <span class="item-price-badge">Rs/-150</span>
+                        <button class="topping-add-btn" aria-label="Add Honey Mustard"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dedicated Full Screen Hot Beverages View -->
+    <div class="hot-beverages-full-screen" id="hotBeveragesDetailsScreen" style="display: none;">
+        <!-- Floating Decorative Ingredients -->
+        <div class="floating-ingredients-container">
+            <!-- Coffee bean -->
+            <div class="floating-ingredient hot-bg-bean">
+                <svg viewBox="0 0 100 100" width="55" height="55">
+                    <ellipse cx="50" cy="50" rx="30" ry="20" fill="#4E342E" opacity="0.15" transform="rotate(30 50 50)"/>
+                    <path d="M22 62 Q50 50 78 38" fill="none" stroke="#3E2723" stroke-width="2"/>
+                </svg>
+            </div>
+            <!-- Tea leaf -->
+            <div class="floating-ingredient hot-bg-leaf">
+                <svg viewBox="0 0 100 100" width="60" height="60">
+                    <path d="M50 80 C30 60, 20 40, 50 15 C80 40, 70 60, 50 80 Z" fill="#4CAF50" opacity="0.15"/>
+                    <path d="M50 80 L50 20" fill="none" stroke="#2E7D32" stroke-width="1.5"/>
+                </svg>
+            </div>
+            <!-- Cinnamon SVG -->
+            <div class="floating-ingredient hot-bg-cinnamon">
+                <svg viewBox="0 0 100 100" width="50" height="50">
+                    <rect x="35" y="15" width="10" height="70" rx="3" fill="#A1887F" opacity="0.15" transform="rotate(45 40 50)"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="burger-screen-top-bar">
+            <button class="back-to-menu-btn" id="backToMenuBtnHotBeverages">
+                <i class="fas fa-arrow-left"></i> Back to Menu
+            </button>
+            <div class="screen-brand">
+                <img src="assets/images/logo.png" alt="HungryHowies" class="screen-logo">
+            </div>
+        </div>
+
+        <div class="burger-screen-content container">
+            <!-- Header Section with Hot Beverages Hero Layout -->
+            <div class="burger-header-grid">
+                <div class="burger-header-text">
+                    <div class="burger-cloche-icon">
+                        <span class="flourish-line"></span>
+                        <i class="fas fa-coffee red-cloche"></i>
+                        <span class="flourish-line"></span>
+                    </div>
+                    <h2 class="burger-title">
+                        <span class="title-dark">HOT</span><br>
+                        <span class="title-red">BEVERAGES</span>
+                    </h2>
+                    <div class="star-flourish">
+                        <span class="star-line"></span>
+                        <span class="stars">★ ★ ★ ★ ★</span>
+                        <span class="star-line"></span>
+                    </div>
+                    <p class="burger-subtitle">Warm, freshly prepared beverages crafted to perfectly complement your meal.</p>
+                </div>
+                <div class="burger-header-image">
+                    <img src="assets/images/hot_beverages_hero.jpg" alt="Hot Beverages" class="burger-hero-img">
+                </div>
+            </div>
+
+            <!-- Hot Beverages Grid of Cards -->
+            <div class="pasta-cards-grid">
+                <!-- 1. Cappucino Coffee -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/hot_beverages_hero.jpg" alt="Cappucino Coffee" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-599</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Cappucino Coffee</h4>
+                        <p>Freshly brewed espresso layered with warm, thick milk foam art.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium signature"><i class="fas fa-mug-hot"></i> Foam Art</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Americano -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/hot_beverages_hero.jpg" alt="Americano" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-399</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Americano</h4>
+                        <p>A classic rich espresso shot diluted with hot water for a smooth finish.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium"><i class="fas fa-coffee"></i> Smooth Black</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Espresso (Single Shot) -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/hot_beverages_hero.jpg" alt="Espresso (Single Shot)" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-399</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Espresso (Single Shot)</h4>
+                        <p>A full-bodied, intense single shot of premium coffee concentrate.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium"><i class="fas fa-fire"></i> Bold Energy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Espresso (Double Shot) -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/hot_beverages_hero.jpg" alt="Espresso (Double Shot)" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-750</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Espresso (Double Shot)</h4>
+                        <p>An extra bold double shot of our premium espresso blend.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium signature"><i class="fas fa-bolt"></i> Extra Bold</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Hot Chocolate -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/hot_beverages_hero.jpg" alt="Hot Chocolate" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-699</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Hot Chocolate</h4>
+                        <p>Rich, creamy melted chocolate topped with sweet milk foam.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium"><i class="fas fa-candy-cane"></i> Sweet Creamy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Mocha -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/hot_beverages_hero.jpg" alt="Mocha" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-650</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Mocha</h4>
+                        <p>The perfect blend of espresso, steamed milk, and rich chocolate sauce.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium signature"><i class="fas fa-cookie"></i> Espresso & Cocoa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Latte -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/hot_beverages_hero.jpg" alt="Latte" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-580</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Latte</h4>
+                        <p>Steamed milk and a shot of rich espresso topped with a thin layer of foam.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium"><i class="fas fa-mug-hot"></i> Velvety Milk</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Mix Tea -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/hot_beverages_hero.jpg" alt="Mix Tea" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-200</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Mix Tea</h4>
+                        <p>Traditional black tea brewed with fresh milk and cardamom.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium"><i class="fas fa-leaf"></i> Cardamom Brew</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. Green Tea -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/hot_beverages_hero.jpg" alt="Green Tea" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-120</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Green Tea</h4>
+                        <p>Refreshing, warm green tea packed with healthy antioxidants.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium spicy"><i class="fas fa-seedling"></i> Healthy Herbal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dedicated Full Screen Cold Coffee View -->
+    <div class="cold-coffee-full-screen" id="coldCoffeeDetailsScreen" style="display: none;">
+        <!-- Floating Decorative Ingredients -->
+        <div class="floating-ingredients-container">
+            <!-- Coffee bean -->
+            <div class="floating-ingredient cold-bg-bean">
+                <svg viewBox="0 0 100 100" width="55" height="55">
+                    <ellipse cx="50" cy="50" rx="30" ry="20" fill="#4E342E" opacity="0.15" transform="rotate(-30 50 50)"/>
+                    <path d="M22 62 Q50 50 78 38" fill="none" stroke="#3E2723" stroke-width="2"/>
+                </svg>
+            </div>
+            <!-- Ice cube -->
+            <div class="floating-ingredient cold-bg-ice">
+                <svg viewBox="0 0 100 100" width="60" height="60">
+                    <rect x="25" y="25" width="50" height="50" rx="6" fill="#E0F7FA" opacity="0.18"/>
+                    <rect x="25" y="25" width="50" height="50" rx="6" fill="none" stroke="#80DEEA" stroke-width="1.5"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="burger-screen-top-bar">
+            <button class="back-to-menu-btn" id="backToMenuBtnColdCoffee">
+                <i class="fas fa-arrow-left"></i> Back to Menu
+            </button>
+            <div class="screen-brand">
+                <img src="assets/images/logo.png" alt="HungryHowies" class="screen-logo">
+            </div>
+        </div>
+
+        <div class="burger-screen-content container">
+            <!-- Header Section with Cold Coffee Hero Layout -->
+            <div class="burger-header-grid">
+                <div class="burger-header-text">
+                    <div class="burger-cloche-icon">
+                        <span class="flourish-line"></span>
+                        <i class="fas fa-mug-hot red-cloche"></i>
+                        <span class="flourish-line"></span>
+                    </div>
+                    <h2 class="burger-title">
+                        <span class="title-dark">COLD</span><br>
+                        <span class="title-red">COFFEE</span>
+                    </h2>
+                    <div class="star-flourish">
+                        <span class="star-line"></span>
+                        <span class="stars">★ ★ ★ ★ ★</span>
+                        <span class="star-line"></span>
+                    </div>
+                    <p class="burger-subtitle">Chilled, creamy and refreshing coffee creations crafted with premium flavors.</p>
+                </div>
+                <div class="burger-header-image">
+                    <img src="assets/images/cold_coffee_hero.jpg" alt="Cold Coffee" class="burger-hero-img">
+                </div>
+            </div>
+
+            <!-- Cold Coffee Grid of Cards -->
+            <div class="pasta-cards-grid">
+                <!-- 1. Strawberry Iced Latte -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/cold_coffee_hero.jpg" alt="Strawberry Iced Latte" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-599</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Strawberry Iced Latte</h4>
+                        <p>A pink, creamy iced latte infused with natural sweet strawberry puree layers.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium signature"><i class="fas fa-seedling"></i> Sweet Strawberry</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Caramel Iced Latte -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/cold_coffee_hero.jpg" alt="Caramel Iced Latte" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-599</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Caramel Iced Latte</h4>
+                        <p>Iced espresso and cold milk sweetened with golden buttery caramel drizzle.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium signature"><i class="fas fa-award"></i> Caramel Drizzle</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Vanilla Iced Latte -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/cold_coffee_hero.jpg" alt="Vanilla Iced Latte" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-599</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Vanilla Iced Latte</h4>
+                        <p>Smooth iced latte flavored with rich, premium aromatic vanilla extract.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium"><i class="fas fa-star"></i> Vanilla Rich</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Mocha Iced Latte -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/cold_coffee_hero.jpg" alt="Mocha Iced Latte" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-599</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Mocha Iced Latte</h4>
+                        <p>Chilled milk, espresso, and delicious chocolate sauce served over ice.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium"><i class="fas fa-cookie"></i> Choco-Coffee</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Iced Dark Chocolate -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/cold_coffee_hero.jpg" alt="Iced Dark Chocolate" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-750</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Iced Dark Chocolate</h4>
+                        <p>A decadent iced dark chocolate beverage topped with rich chocolate shavings.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium spicy"><i class="fas fa-fire-alt"></i> Rich & Cocoa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dedicated Full Screen Ice Cream View -->
+    <div class="ice-cream-full-screen" id="iceCreamDetailsScreen" style="display: none;">
+        <!-- Floating Decorative Ingredients -->
+        <div class="floating-ingredients-container">
+            <!-- Cone outline -->
+            <div class="floating-ingredient ice-bg-cone">
+                <svg viewBox="0 0 100 100" width="60" height="60">
+                    <path d="M30 30 L50 80 L70 30 Z" fill="#D7CCC8" opacity="0.18"/>
+                    <path d="M30 30 L50 80 L70 30" fill="none" stroke="#8D6E63" stroke-width="1.5"/>
+                </svg>
+            </div>
+            <!-- Strawberry piece -->
+            <div class="floating-ingredient ice-bg-strawberry">
+                <svg viewBox="0 0 100 100" width="55" height="55">
+                    <circle cx="50" cy="50" r="25" fill="#E53935" opacity="0.15"/>
+                    <circle cx="50" cy="50" r="25" fill="none" stroke="#C62828" stroke-width="1.5"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="burger-screen-top-bar">
+            <button class="back-to-menu-btn" id="backToMenuBtnIceCream">
+                <i class="fas fa-arrow-left"></i> Back to Menu
+            </button>
+            <div class="screen-brand">
+                <img src="assets/images/logo.png" alt="HungryHowies" class="screen-logo">
+            </div>
+        </div>
+
+        <div class="burger-screen-content container">
+            <!-- Header Section with Ice Cream Hero Layout -->
+            <div class="burger-header-grid">
+                <div class="burger-header-text">
+                    <div class="burger-cloche-icon">
+                        <span class="flourish-line"></span>
+                        <i class="fas fa-ice-cream red-cloche"></i>
+                        <span class="flourish-line"></span>
+                    </div>
+                    <h2 class="burger-title">
+                        <span class="title-dark">ICE</span><br>
+                        <span class="title-red">CREAM</span>
+                    </h2>
+                    <div class="star-flourish">
+                        <span class="star-line"></span>
+                        <span class="stars">★ ★ ★ ★ ★</span>
+                        <span class="star-line"></span>
+                    </div>
+                    <p class="burger-subtitle">Creamy, delicious scoops in your favorite classic and refreshing flavors.</p>
+                </div>
+                <div class="burger-header-image">
+                    <img src="assets/images/ice_cream_hero.jpg" alt="Ice Cream" class="burger-hero-img">
+                </div>
+            </div>
+
+            <!-- Ice Cream Table Layout Grid -->
+            <div class="burger-sections-grid">
+                <!-- Pricing table details -->
+                <div class="burger-category-column" style="grid-column: span 2;">
+                    <div class="burger-menu-card beef-card">
+                        <div class="burger-table-header beef-header">
+                            <span><i class="fas fa-ice-cream red-glow-icon"></i> FLAVOR</span>
+                            <span style="display: flex; gap: 40px; justify-content: flex-end; width: 50%;">
+                                <span style="width: 110px; text-align: right;">Single Scope</span>
+                                <span style="width: 110px; text-align: right;">Double Scope</span>
+                            </span>
+                        </div>
+                        <div class="burger-table-body">
+                            <!-- Kulfa -->
+                            <div class="burger-item-row" style="justify-content: space-between; align-items: center; padding: 18px 24px;">
+                                <div class="item-name" style="font-size: 1.1rem; font-weight: 700;"><span class="red-dot"></span> Kulfa</div>
+                                <div style="display: flex; gap: 40px; justify-content: flex-end; width: 50%; align-items: center;">
+                                    <div class="item-price-badge" style="width: 110px; text-align: center;">Rs/-199</div>
+                                    <div class="item-price-badge" style="width: 110px; text-align: center;">Rs/-399</div>
+                                </div>
+                            </div>
+                            <!-- Mango -->
+                            <div class="burger-item-row" style="justify-content: space-between; align-items: center; padding: 18px 24px;">
+                                <div class="item-name" style="font-size: 1.1rem; font-weight: 700;"><span class="red-dot"></span> Mango</div>
+                                <div style="display: flex; gap: 40px; justify-content: flex-end; width: 50%; align-items: center;">
+                                    <div class="item-price-badge" style="width: 110px; text-align: center;">Rs/-199</div>
+                                    <div class="item-price-badge" style="width: 110px; text-align: center;">Rs/-399</div>
+                                </div>
+                            </div>
+                            <!-- Vanilla -->
+                            <div class="burger-item-row" style="justify-content: space-between; align-items: center; padding: 18px 24px;">
+                                <div class="item-name" style="font-size: 1.1rem; font-weight: 700;"><span class="red-dot"></span> Vanilla</div>
+                                <div style="display: flex; gap: 40px; justify-content: flex-end; width: 50%; align-items: center;">
+                                    <div class="item-price-badge" style="width: 110px; text-align: center;">Rs/-199</div>
+                                    <div class="item-price-badge" style="width: 110px; text-align: center;">Rs/-399</div>
+                                </div>
+                            </div>
+                            <!-- Chocolate -->
+                            <div class="burger-item-row" style="justify-content: space-between; align-items: center; padding: 18px 24px;">
+                                <div class="item-name" style="font-size: 1.1rem; font-weight: 700;"><span class="red-dot"></span> Chocolate</div>
+                                <div style="display: flex; gap: 40px; justify-content: flex-end; width: 50%; align-items: center;">
+                                    <div class="item-price-badge" style="width: 110px; text-align: center;">Rs/-199</div>
+                                    <div class="item-price-badge" style="width: 110px; text-align: center;">Rs/-399</div>
+                                </div>
+                            </div>
+                            <!-- Strawberry -->
+                            <div class="burger-item-row" style="justify-content: space-between; align-items: center; padding: 18px 24px;">
+                                <div class="item-name" style="font-size: 1.1rem; font-weight: 700;"><span class="red-dot"></span> Strawberry</div>
+                                <div style="display: flex; gap: 40px; justify-content: flex-end; width: 50%; align-items: center;">
+                                    <div class="item-price-badge" style="width: 110px; text-align: center;">Rs/-199</div>
+                                    <div class="item-price-badge" style="width: 110px; text-align: center;">Rs/-399</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dedicated Full Screen Mocktails View -->
+    <div class="mocktails-full-screen" id="mocktailsDetailsScreen" style="display: none;">
+        <!-- Floating Decorative Ingredients -->
+        <div class="floating-ingredients-container">
+            <!-- Pineapple slice -->
+            <div class="floating-ingredient mocktail-bg-pineapple">
+                <svg viewBox="0 0 100 100" width="60" height="60">
+                    <circle cx="50" cy="50" r="30" fill="#FFD54F" opacity="0.15"/>
+                    <circle cx="50" cy="50" r="10" fill="#FFFFFF"/>
+                    <circle cx="50" cy="50" r="30" fill="none" stroke="#FFB300" stroke-width="1.5"/>
+                </svg>
+            </div>
+            <!-- Mint leaf -->
+            <div class="floating-ingredient mocktail-bg-mint">
+                <svg viewBox="0 0 100 100" width="50" height="50">
+                    <path d="M50 80 C30 60, 20 40, 50 15 C80 40, 70 60, 50 80 Z" fill="#81C784" opacity="0.15"/>
+                </svg>
+            </div>
+            <!-- Lemon slice -->
+            <div class="floating-ingredient mocktail-bg-lemon">
+                <svg viewBox="0 0 100 100" width="55" height="55">
+                    <circle cx="50" cy="50" r="28" fill="#FFF176" opacity="0.15"/>
+                    <circle cx="50" cy="50" r="28" fill="none" stroke="#FBC02D" stroke-width="2"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="burger-screen-top-bar">
+            <button class="back-to-menu-btn" id="backToMenuBtnMocktails">
+                <i class="fas fa-arrow-left"></i> Back to Menu
+            </button>
+            <div class="screen-brand">
+                <img src="assets/images/logo.png" alt="HungryHowies" class="screen-logo">
+            </div>
+        </div>
+
+        <div class="burger-screen-content container">
+            <!-- Header Section with Mocktails Hero Layout -->
+            <div class="burger-header-grid">
+                <div class="burger-header-text">
+                    <div class="burger-cloche-icon">
+                        <span class="flourish-line"></span>
+                        <i class="fas fa-cocktail red-cloche"></i>
+                        <span class="flourish-line"></span>
+                    </div>
+                    <h2 class="burger-title">
+                        <span class="title-dark">OUR</span><br>
+                        <span class="title-red">MOCKTAILS</span>
+                    </h2>
+                    <div class="star-flourish">
+                        <span class="star-line"></span>
+                        <span class="stars">★ ★ ★ ★ ★</span>
+                        <span class="star-line"></span>
+                    </div>
+                    <p class="burger-subtitle">Refreshing handcrafted mocktails bursting with vibrant flavors, fresh fruits and signature blends.</p>
+                </div>
+                <div class="burger-header-image">
+                    <img src="assets/images/mocktails_hero.jpg" alt="Mocktails" class="burger-hero-img">
+                </div>
+            </div>
+
+            <!-- Mocktails Grid of Cards -->
+            <div class="pasta-cards-grid">
+                <!-- 1. Pink Lady -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/mocktails_hero.jpg" alt="Pink Lady" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-590</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Pink Lady</h4>
+                        <p>Vibrant pink tropical beverage served with a strawberry/citrus garnish.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium"><i class="fas fa-venus"></i> Elegant Pink</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Pina Colada -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/mocktails_hero.jpg" alt="Pina Colada" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-650</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Pina Colada</h4>
+                        <p>Classic rich and creamy mocktail blended with sweet coconut and fresh pineapple.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium signature"><i class="fas fa-umbrella-beach"></i> Tropical Cream</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Zinga Lady -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/mocktails_hero.jpg" alt="Zinga Lady" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-650</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Zinga Lady</h4>
+                        <p>A colorful tropical zesty blend served chilled with a fresh fruit garnish.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium signature"><i class="fas fa-glass-whiskey"></i> Zesty Fruit</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Pineapple (with coconut) -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/mocktails_hero.jpg" alt="Pineapple (with coconut)" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-590</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Pineapple (with coconut)</h4>
+                        <p>Chilled pineapple juice layered with creamy sweet coconut syrup flavor.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium"><i class="fas fa-check"></i> Creamy Yellow</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Amazone Blast -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/mocktails_hero.jpg" alt="Amazone Blast" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-590</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Amazone Blast</h4>
+                        <p>An exotic colorful layered mocktail packed with sweet tropical fruit juices.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium"><i class="fas fa-bolt"></i> Exotic Layers</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Blue Lady Colada -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/mocktails_hero.jpg" alt="Blue Lady Colada" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-590</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Blue Lady Colada</h4>
+                        <p>Bright blue tropical coconut colada served in a premium glass.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium spicy"><i class="fas fa-cocktail"></i> Blue Lagoon</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dedicated Full Screen Mojito View -->
+    <div class="mojito-full-screen" id="mojitoDetailsScreen" style="display: none;">
+        <!-- Floating Decorative Ingredients -->
+        <div class="floating-ingredients-container">
+            <div class="floating-ingredient mojito-bg-ice">
+                <svg viewBox="0 0 100 100" width="55" height="55">
+                    <rect x="25" y="25" width="50" height="50" rx="6" fill="#E0F7FA" opacity="0.18"/>
+                </svg>
+            </div>
+            <div class="floating-ingredient mojito-bg-mint">
+                <svg viewBox="0 0 100 100" width="50" height="50">
+                    <path d="M50 80 C30 60, 20 40, 50 15 C80 40, 70 60, 50 80 Z" fill="#81C784" opacity="0.15"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="burger-screen-top-bar">
+            <button class="back-to-menu-btn" id="backToMenuBtnMojito">
+                <i class="fas fa-arrow-left"></i> Back to Menu
+            </button>
+            <div class="screen-brand">
+                <img src="assets/images/logo.png" alt="HungryHowies" class="screen-logo">
+            </div>
+        </div>
+
+        <div class="burger-screen-content container">
+            <div class="burger-header-grid">
+                <div class="burger-header-text">
+                    <div class="burger-cloche-icon">
+                        <span class="flourish-line"></span>
+                        <i class="fas fa-glass-martini red-cloche"></i>
+                        <span class="flourish-line"></span>
+                    </div>
+                    <h2 class="burger-title">
+                        <span class="title-dark">REFRESHING</span><br>
+                        <span class="title-red">MOJITOS</span>
+                    </h2>
+                    <div class="star-flourish">
+                        <span class="star-line"></span>
+                        <span class="stars">★ ★ ★ ★ ★</span>
+                        <span class="star-line"></span>
+                    </div>
+                    <p class="burger-subtitle">Refreshing handcrafted mojitos blended with fresh fruit, mint, citrus and sparkling flavors.</p>
+                </div>
+                <div class="burger-header-image">
+                    <img src="assets/images/mojito_hero.jpg" alt="Mojito" class="burger-hero-img">
+                </div>
+            </div>
+
+            <!-- Mojito Cards -->
+            <div class="pasta-cards-grid">
+                <!-- 1. Blue Berry -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/mojito_hero.jpg" alt="Blue Berry" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-450</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Blue Berry</h4>
+                        <p>Deep blueberry/purple mojito infused with fresh blueberries, lime, and mint.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium signature"><i class="fas fa-seedling"></i> Blueberry</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Blue Lagon -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/mojito_hero.jpg" alt="Blue Lagon" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-450</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Blue Lagon</h4>
+                        <p>Vibrant blue drink with lime slices, mint leaves, and crushed ice.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium signature"><i class="fas fa-umbrella-beach"></i> Lagoon Blue</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Green Apple -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/mojito_hero.jpg" alt="Green Apple" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-450</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Green Apple</h4>
+                        <p>Crispy green apple flavors blended with fresh lime, mint, and sparkling soda.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium"><i class="fas fa-apple-alt"></i> Green Apple</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Strawberry -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/mojito_hero.jpg" alt="Strawberry" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-450</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Strawberry</h4>
+                        <p>Bright red strawberry mojito with fresh strawberry slices and mint garnish.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium"><i class="fas fa-star"></i> Strawberry</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Watermelon -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/mojito_hero.jpg" alt="Watermelon" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-450</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Watermelon</h4>
+                        <p>Fresh watermelon-red mojito served with sliced watermelon and fresh mint leaves.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium"><i class="fas fa-seedling"></i> Watermelon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Passion Fruit -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/mojito_hero.jpg" alt="Passion Fruit" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-450</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Passion Fruit</h4>
+                        <p>Golden tropical passion fruit pulp served with fresh citrus and mint leaves.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium signature"><i class="fas fa-sun"></i> Passion Fruit</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dedicated Full Screen Smoothies View -->
+    <div class="smoothies-full-screen" id="smoothiesDetailsScreen" style="display: none;">
+        <!-- Floating Decorative Ingredients -->
+        <div class="floating-ingredients-container">
+            <div class="floating-ingredient smoothie-bg-strawberry">
+                <svg viewBox="0 0 100 100" width="55" height="55">
+                    <circle cx="50" cy="50" r="25" fill="#E53935" opacity="0.15"/>
+                </svg>
+            </div>
+            <div class="floating-ingredient smoothie-bg-mango">
+                <svg viewBox="0 0 100 100" width="55" height="55">
+                    <circle cx="50" cy="50" r="28" fill="#FFD54F" opacity="0.15"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="burger-screen-top-bar">
+            <button class="back-to-menu-btn" id="backToMenuBtnSmoothies">
+                <i class="fas fa-arrow-left"></i> Back to Menu
+            </button>
+            <div class="screen-brand">
+                <img src="assets/images/logo.png" alt="HungryHowies" class="screen-logo">
+            </div>
+        </div>
+
+        <div class="burger-screen-content container">
+            <div class="burger-header-grid">
+                <div class="burger-header-text">
+                    <div class="burger-cloche-icon">
+                        <span class="flourish-line"></span>
+                        <i class="fas fa-blender red-cloche"></i>
+                        <span class="flourish-line"></span>
+                    </div>
+                    <h2 class="burger-title">
+                        <span class="title-dark">CREAMY</span><br>
+                        <span class="title-red">SMOOTHIES</span>
+                    </h2>
+                    <div class="star-flourish">
+                        <span class="star-line"></span>
+                        <span class="stars">★ ★ ★ ★ ★</span>
+                        <span class="star-line"></span>
+                    </div>
+                    <p class="burger-subtitle">Fresh, creamy and delicious fruit smoothies blended to perfection.</p>
+                </div>
+                <div class="burger-header-image">
+                    <img src="assets/images/smoothies_hero.jpg" alt="Smoothies" class="burger-hero-img">
+                </div>
+            </div>
+
+            <!-- Smoothies Cards -->
+            <div class="pasta-cards-grid">
+                <!-- 1. Mango -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/smoothies_hero.jpg" alt="Mango" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-199</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Mango</h4>
+                        <p>Bright golden-orange smoothie blended with fresh sweet mango chunks.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium signature"><i class="fas fa-sun"></i> Fresh Mango</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Banana -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/smoothies_hero.jpg" alt="Banana" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-199</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Banana</h4>
+                        <p>Thick, creamy pale-yellow smoothie crafted with sweet bananas and fresh cream.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium"><i class="fas fa-award"></i> Banana</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Mix Berry -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/smoothies_hero.jpg" alt="Mix Berry" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-199</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Mix Berry</h4>
+                        <p>Rich purple/red berry smoothie containing a custom blend of forest berries.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium signature"><i class="fas fa-leaf"></i> Mixed Berries</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Blue Berry -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/smoothies_hero.jpg" alt="Blue Berry" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-199</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Blue Berry</h4>
+                        <p>Deep blue berry smoothie blended creamy and thick with sweet blueberries.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium"><i class="fas fa-seedling"></i> Blueberry</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Strawberry -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/smoothies_hero.jpg" alt="Strawberry" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-199</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Strawberry</h4>
+                        <p>Vibrant pink/red strawberry smoothie blended with fresh strawberries and Greek yogurt.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium spicy"><i class="fas fa-fire-alt"></i> Strawberry</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dedicated Full Screen Ice Shakes View -->
+    <div class="ice-shakes-full-screen" id="iceShakesDetailsScreen" style="display: none;">
+        <!-- Floating Decorative Ingredients -->
+        <div class="floating-ingredients-container">
+            <div class="floating-ingredient shake-bg-cherry">
+                <svg viewBox="0 0 100 100" width="50" height="50">
+                    <circle cx="50" cy="50" r="22" fill="#D32F2F" opacity="0.18"/>
+                </svg>
+            </div>
+            <div class="floating-ingredient shake-bg-chocolate">
+                <svg viewBox="0 0 100 100" width="55" height="55">
+                    <rect x="30" y="30" width="40" height="40" rx="3" fill="#5D4037" opacity="0.15" transform="rotate(45 50 50)"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="burger-screen-top-bar">
+            <button class="back-to-menu-btn" id="backToMenuBtnIceShakes">
+                <i class="fas fa-arrow-left"></i> Back to Menu
+            </button>
+            <div class="screen-brand">
+                <img src="assets/images/logo.png" alt="HungryHowies" class="screen-logo">
+            </div>
+        </div>
+
+        <div class="burger-screen-content container">
+            <div class="burger-header-grid">
+                <div class="burger-header-text">
+                    <div class="burger-cloche-icon">
+                        <span class="flourish-line"></span>
+                        <i class="fas fa-glass-martini-alt red-cloche"></i>
+                        <span class="flourish-line"></span>
+                    </div>
+                    <h2 class="burger-title">
+                        <span class="title-dark">INDULGENT</span><br>
+                        <span class="title-red">ICE SHAKES</span>
+                    </h2>
+                    <div class="star-flourish">
+                        <span class="star-line"></span>
+                        <span class="stars">★ ★ ★ ★ ★</span>
+                        <span class="star-line"></span>
+                    </div>
+                    <p class="burger-subtitle">Rich, creamy and indulgent shakes blended with delicious flavors for the perfect sweet treat.</p>
+                </div>
+                <div class="burger-header-image">
+                    <img src="assets/images/ice_shakes_hero.jpg" alt="Ice Shakes" class="burger-hero-img">
+                </div>
+            </div>
+
+            <!-- Ice Shakes Cards -->
+            <div class="pasta-cards-grid">
+                <!-- 1. Mango -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/ice_shakes_hero.jpg" alt="Mango" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-590</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Mango</h4>
+                        <p>Rich golden-yellow shake served with fresh mango pieces and sweet mango drizzle.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium signature"><i class="fas fa-sun"></i> Mango Drizzle</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Vanilla -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/ice_shakes_hero.jpg" alt="Vanilla" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-590</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Vanilla</h4>
+                        <p>Thick, creamy vanilla bean shake topped with whipped cream.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium"><i class="fas fa-birthday-cake"></i> Whipped Cream</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Caramel -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/ice_shakes_hero.jpg" alt="Caramel" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-590</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Caramel</h4>
+                        <p>Rich caramel ice shake with thick buttery caramel drizzle and golden toppings.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium signature"><i class="fas fa-award"></i> Caramel Topping</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Chocolate -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/ice_shakes_hero.jpg" alt="Chocolate" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-590</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Chocolate</h4>
+                        <p>Decadent dark chocolate shake loaded with chocolate drizzle and chocolate shavings.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium"><i class="fas fa-cookie-bite"></i> Double Choco</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Strawberry -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/ice_shakes_hero.jpg" alt="Strawberry" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-590</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Strawberry</h4>
+                        <p>Creamy soft-pink shake blended with fresh strawberries and strawberry drizzle.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium"><i class="fas fa-star"></i> Strawberry</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Special Kulfa -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/ice_shakes_hero.jpg" alt="Special Kulfa" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-590</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Special Kulfa</h4>
+                        <p>Traditional rich kulfa-inspired shake garnished with almonds and pistachios.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium signature"><i class="fas fa-gem"></i> Premium Nutty</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dedicated Full Screen Milk Shakes View -->
+    <div class="milk-shakes-full-screen" id="milkShakesDetailsScreen" style="display: none;">
+        <!-- Floating Decorative Ingredients -->
+        <div class="floating-ingredients-container">
+            <div class="floating-ingredient milk-bg-apple">
+                <svg viewBox="0 0 100 100" width="50" height="50">
+                    <circle cx="50" cy="50" r="24" fill="#81C784" opacity="0.15"/>
+                </svg>
+            </div>
+            <div class="floating-ingredient milk-bg-banana">
+                <svg viewBox="0 0 100 100" width="55" height="55">
+                    <ellipse cx="50" cy="50" rx="30" ry="12" fill="#FFF176" opacity="0.18"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="burger-screen-top-bar">
+            <button class="back-to-menu-btn" id="backToMenuBtnMilkShakes">
+                <i class="fas fa-arrow-left"></i> Back to Menu
+            </button>
+            <div class="screen-brand">
+                <img src="assets/images/logo.png" alt="HungryHowies" class="screen-logo">
+            </div>
+        </div>
+
+        <div class="burger-screen-content container">
+            <div class="burger-header-grid">
+                <div class="burger-header-text">
+                    <div class="burger-cloche-icon">
+                        <span class="flourish-line"></span>
+                        <i class="fas fa-glass-cheers red-cloche"></i>
+                        <span class="flourish-line"></span>
+                    </div>
+                    <h2 class="burger-title">
+                        <span class="title-dark">CLASSIC</span><br>
+                        <span class="title-red">MILK SHAKES</span>
+                    </h2>
+                    <div class="star-flourish">
+                        <span class="star-line"></span>
+                        <span class="stars">★ ★ ★ ★ ★</span>
+                        <span class="star-line"></span>
+                    </div>
+                    <p class="burger-subtitle">Creamy, chilled and delicious milk shakes blended with fresh flavors for the perfect sweet treat.</p>
+                </div>
+                <div class="burger-header-image">
+                    <img src="assets/images/milk_shakes_hero.jpg" alt="Milk Shakes" class="burger-hero-img">
+                </div>
+            </div>
+
+            <!-- Milk Shakes Cards (2x2 Grid) -->
+            <div class="pasta-cards-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 900px;">
+                <!-- 1. Apple -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/milk_shakes_hero.jpg" alt="Apple" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-400</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Apple</h4>
+                        <p>Delicious light-green apple shake blended with fresh apple slices.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium"><i class="fas fa-apple-alt"></i> Fresh Apple</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Banana -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/milk_shakes_hero.jpg" alt="Banana" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-400</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Banana</h4>
+                        <p>Rich and sweet shake made with fresh bananas and high-quality milk.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium"><i class="fas fa-star"></i> Banana</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Seasonal -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/milk_shakes_hero.jpg" alt="Seasonal" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-400</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Seasonal</h4>
+                        <p>Creamy mixed fruit milkshake crafted using premium seasonal fruits.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium signature"><i class="fas fa-spa"></i> Premium Seasonal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Strawberry -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/milk_shakes_hero.jpg" alt="Strawberry" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-400</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Strawberry</h4>
+                        <p>Creamy soft-pink milkshake flavored with fresh sweet strawberries.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium spicy"><i class="fas fa-heart"></i> Strawberry</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dedicated Full Screen Soft Drinks View -->
+    <div class="soft-drinks-full-screen" id="softDrinksDetailsScreen" style="display: none;">
+        <!-- Floating Decorative Ingredients -->
+        <div class="floating-ingredients-container">
+            <div class="floating-ingredient soft-bg-lime">
+                <svg viewBox="0 0 100 100" width="55" height="55">
+                    <circle cx="50" cy="50" r="28" fill="#FFF176" opacity="0.15"/>
+                    <circle cx="50" cy="50" r="28" fill="none" stroke="#FBC02D" stroke-width="2"/>
+                </svg>
+            </div>
+            <div class="floating-ingredient soft-bg-mint">
+                <svg viewBox="0 0 100 100" width="50" height="50">
+                    <path d="M50 80 C30 60, 20 40, 50 15 C80 40, 70 60, 50 80 Z" fill="#81C784" opacity="0.15"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="burger-screen-top-bar">
+            <button class="back-to-menu-btn" id="backToMenuBtnSoftDrinks">
+                <i class="fas fa-arrow-left"></i> Back to Menu
+            </button>
+            <div class="screen-brand">
+                <img src="assets/images/logo.png" alt="HungryHowies" class="screen-logo">
+            </div>
+        </div>
+
+        <div class="burger-screen-content container">
+            <div class="burger-header-grid">
+                <div class="burger-header-text">
+                    <div class="burger-cloche-icon">
+                        <span class="flourish-line"></span>
+                        <i class="fas fa-wine-bottle red-cloche"></i>
+                        <span class="flourish-line"></span>
+                    </div>
+                    <h2 class="burger-title">
+                        <span class="title-dark">REFRESHING</span><br>
+                        <span class="title-red">SOFT DRINKS</span>
+                    </h2>
+                    <div class="star-flourish">
+                        <span class="star-line"></span>
+                        <span class="stars">★ ★ ★ ★ ★</span>
+                        <span class="star-line"></span>
+                    </div>
+                    <p class="burger-subtitle">Fresh, chilled and refreshing drinks crafted with citrus, mint and premium ingredients.</p>
+                </div>
+                <div class="burger-header-image">
+                    <img src="assets/images/soft_drinks_hero.jpg" alt="Soft Drinks" class="burger-hero-img">
+                </div>
+            </div>
+
+            <!-- Soft Drinks Cards (Side by Side Grid) -->
+            <div class="pasta-cards-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 900px;">
+                <!-- 1. Fresh Lime -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/soft_drinks_hero.jpg" alt="Fresh Lime" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-250</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Fresh Lime</h4>
+                        <p>Bright lime drink with lime wedges, mint garnish, crushed ice, and refreshing condensation.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium"><i class="fas fa-lemon"></i> Fresh Citrus</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Mint Margrita -->
+                <div class="pasta-detail-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/soft_drinks_hero.jpg" alt="Mint Margrita" class="pasta-card-img">
+                        <div class="item-price-badge">Rs/-300</div>
+                    </div>
+                    <div class="pasta-card-content">
+                        <h4>Mint Margrita</h4>
+                        <p>Refreshing green mint blend served with lime slices, mint leaves, and crushed ice in a tall glass.</p>
+                        <div class="pasta-card-footer">
+                            <span class="badge-premium signature"><i class="fas fa-seedling"></i> Mint Blended</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 
