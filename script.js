@@ -318,6 +318,28 @@ dropdownItems.forEach(item => {
     });
 });
 
+const categorySubScreenMap = {
+    'pizza': 'pizzaDetailsScreen',
+    'chicken-steak': 'steakDetailsScreen',
+    'burger': 'burgerDetailsScreen',
+    'dajjaj-brost': 'brostDetailsScreen',
+    'pasta': 'pastaDetailsScreen',
+    'panini': 'paniniDetailsScreen',
+    'appetizer': 'appetizerDetailsScreen',
+    'fries': 'friesDetailsScreen',
+    'beverages': 'beveragesDetailsScreen',
+    'extra-topping': 'toppingsDetailsScreen',
+    'hot-beverages': 'hotBeveragesDetailsScreen',
+    'cold-coffee': 'coldCoffeeDetailsScreen',
+    'ice-cream': 'iceCreamDetailsScreen',
+    'mocktails': 'mocktailsDetailsScreen',
+    'mojito': 'mojitoDetailsScreen',
+    'smoothies': 'smoothiesDetailsScreen',
+    'ice-shakes': 'iceShakesDetailsScreen',
+    'milk-shakes': 'milkShakesDetailsScreen',
+    'soft-drinks': 'softDrinksDetailsScreen'
+};
+
 function filterMenuItems() {
     const searchTerm = searchInput ? searchInput.value.toLowerCase().trim() : '';
     let visibleCount = 0;
@@ -329,9 +351,20 @@ function filterMenuItems() {
     menuDishCards.forEach(card => {
         const cardCategory = card.getAttribute('data-category') || '';
         const itemTitle = card.querySelector('h3') ? card.querySelector('h3').textContent.toLowerCase() : '';
+        const itemDesc = card.querySelector('.dish-card-desc') ? card.querySelector('.dish-card-desc').textContent.toLowerCase() : '';
+
+        const subScreenId = categorySubScreenMap[cardCategory];
+        const subScreenEl = subScreenId ? document.getElementById(subScreenId) : null;
+        const subScreenText = subScreenEl ? subScreenEl.innerText.toLowerCase() : '';
 
         const matchesCategory = (currentCategory === 'all' || cardCategory === currentCategory);
-        const matchesSearch = (searchTerm === '' || itemTitle.includes(searchTerm) || cardCategory.toLowerCase().includes(searchTerm));
+        const matchesSearch = (
+            searchTerm === '' ||
+            itemTitle.includes(searchTerm) ||
+            itemDesc.includes(searchTerm) ||
+            cardCategory.toLowerCase().includes(searchTerm) ||
+            subScreenText.includes(searchTerm)
+        );
 
         if (matchesCategory && matchesSearch) {
             card.style.display = 'block';
@@ -350,6 +383,19 @@ function filterMenuItems() {
                 ease: 'power2.in',
                 onComplete: () => {
                     card.style.display = 'none';
+                }
+            });
+        }
+
+        // Filter sub-items inside the corresponding sub screen
+        if (subScreenEl) {
+            const subItems = subScreenEl.querySelectorAll('.pasta-detail-card, .pizza-detail-card, .topping-item-card, .info-addon-card, .extra-beef-card, .burger-item-row, .steak-item-row');
+            subItems.forEach(subItem => {
+                const itemText = subItem.innerText.toLowerCase();
+                if (searchTerm === '' || itemText.includes(searchTerm) || cardCategory.toLowerCase().includes(searchTerm)) {
+                    subItem.style.display = '';
+                } else {
+                    subItem.style.display = 'none';
                 }
             });
         }
