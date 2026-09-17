@@ -1,0 +1,54 @@
+/* ==========================================
+   HUNGRY HOWIE'S - COLOR SYSTEM & PALETTE
+   ========================================== */
+
+:root {
+    /* Brand Primary Reds */
+    --primary-red: #ED1C24;
+    --deep-red: #B5121B;
+    --bright-red: #F21D2B;
+    --crimson-red: #B71C1C;
+    --alert-red: #C62828;
+    --error-red: #D32F2F;
+
+    /* Brand Accents & Yellows */
+    --brand-yellow: #FFD400;
+    --warm-yellow: #FFC400;
+    --gold-metallic: #D4AF37;
+    --amber-orange: #FFB300;
+
+    /* Dark Mode & Charcoal Surfaces */
+    --deep-charcoal: #171717;
+    --charcoal-mid: #1A1A1A;
+    --ultra-dark: #0A0A0A;
+    --elevated-dark: #2C2C2C;
+    --cream: #F8F6F0;
+
+    /* Functional Colors */
+    --veg-green: #4CAF50;
+    --success-green: #2E7D32;
+    --spicy-orange: #EF6C00;
+
+    /* Shadows & Glow Effects */
+    --shadow-dark: rgba(0, 0, 0, 0.8);
+    --shadow-light: rgba(0, 0, 0, 0.3);
+    --glow-red: rgba(237, 28, 36, 0.35);
+    --glow-red-soft: rgba(237, 28, 36, 0.15);
+}
+
+/* Color Utility Classes */
+.bg-primary-red   { background-color: var(--primary-red) !important; }
+.bg-deep-red      { background-color: var(--deep-red) !important; }
+.bg-brand-yellow  { background-color: var(--brand-yellow) !important; }
+.bg-deep-charcoal { background-color: var(--deep-charcoal) !important; }
+.bg-charcoal-mid  { background-color: var(--charcoal-mid) !important; }
+.bg-cream         { background-color: var(--cream) !important; }
+
+.text-primary-red  { color: var(--primary-red) !important; }
+.text-bright-red   { color: var(--bright-red) !important; }
+.text-brand-yellow { color: var(--brand-yellow) !important; }
+.text-gold         { color: var(--gold-metallic) !important; }
+.text-cream        { color: var(--cream) !important; }
+
+.border-primary-red { border-color: var(--primary-red) !important; }
+.border-gold        { border-color: var(--gold-metallic) !important; }
