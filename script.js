@@ -343,7 +343,12 @@ const categorySubScreenMap = {
     'smoothies': 'smoothiesDetailsScreen',
     'ice-shakes': 'iceShakesDetailsScreen',
     'milk-shakes': 'milkShakesDetailsScreen',
-    'soft-drinks': 'softDrinksDetailsScreen'
+    'soft-drinks': 'softDrinksDetailsScreen',
+    'pakistani-karahi': 'pakistaniKarahiDetailsScreen',
+    'tandoori': 'tandooriDetailsScreen',
+    'biryani': 'biryaniDetailsScreen',
+    'soup': 'soupDetailsScreen',
+    'salad': 'saladDetailsScreen'
 };
 
 function filterMenuItems() {
@@ -1226,6 +1231,115 @@ if (backToMenuBtnSoftDrinks) {
     backToMenuBtnSoftDrinks.addEventListener('click', () => {
         closeScreenWithHistory(softDrinksDetailsScreen);
     });
+}
+
+// Dedicated Full Screen Pakistani Karahi Navigation Handler
+const pakistaniKarahiDetailsScreen = document.getElementById('pakistaniKarahiDetailsScreen');
+const backToMenuBtnPakistaniKarahi = document.getElementById('backToMenuBtnPakistaniKarahi');
+const pakistaniKarahiCard = document.querySelector('.dish-card-3d[data-category="pakistani-karahi"]');
+
+function openPakistaniKarahiDetails() {
+    if (pakistaniKarahiDetailsScreen) {
+        pakistaniKarahiDetailsScreen.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+            pakistaniKarahiDetailsScreen.classList.add('active');
+        }, 10);
+        pushNavigationState('pakistaniKarahiDetailsScreen');
+    }
+}
+
+if (pakistaniKarahiCard) {
+    pakistaniKarahiCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        openPakistaniKarahiDetails();
+    });
+}
+
+if (backToMenuBtnPakistaniKarahi) {
+    backToMenuBtnPakistaniKarahi.addEventListener('click', () => {
+        closeScreenWithHistory(pakistaniKarahiDetailsScreen);
+    });
+}
+
+// Tandoori Screen Handlers
+const tandooriDetailsScreen = document.getElementById('tandooriDetailsScreen');
+const backToMenuBtnTandoori = document.getElementById('backToMenuBtnTandoori');
+const tandooriCard = document.querySelector('.dish-card-3d[data-category="tandoori"]');
+
+if (tandooriCard) {
+    tandooriCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (tandooriDetailsScreen) {
+            tandooriDetailsScreen.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => tandooriDetailsScreen.classList.add('active'), 10);
+            pushNavigationState('tandooriDetailsScreen');
+        }
+    });
+}
+if (backToMenuBtnTandoori) {
+    backToMenuBtnTandoori.addEventListener('click', () => closeScreenWithHistory(tandooriDetailsScreen));
+}
+
+// Biryani Screen Handlers
+const biryaniDetailsScreen = document.getElementById('biryaniDetailsScreen');
+const backToMenuBtnBiryani = document.getElementById('backToMenuBtnBiryani');
+const biryaniCard = document.querySelector('.dish-card-3d[data-category="biryani"]');
+
+if (biryaniCard) {
+    biryaniCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (biryaniDetailsScreen) {
+            biryaniDetailsScreen.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => biryaniDetailsScreen.classList.add('active'), 10);
+            pushNavigationState('biryaniDetailsScreen');
+        }
+    });
+}
+if (backToMenuBtnBiryani) {
+    backToMenuBtnBiryani.addEventListener('click', () => closeScreenWithHistory(biryaniDetailsScreen));
+}
+
+// Soup Screen Handlers
+const soupDetailsScreen = document.getElementById('soupDetailsScreen');
+const backToMenuBtnSoup = document.getElementById('backToMenuBtnSoup');
+const soupCard = document.querySelector('.dish-card-3d[data-category="soup"]');
+
+if (soupCard) {
+    soupCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (soupDetailsScreen) {
+            soupDetailsScreen.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => soupDetailsScreen.classList.add('active'), 10);
+            pushNavigationState('soupDetailsScreen');
+        }
+    });
+}
+if (backToMenuBtnSoup) {
+    backToMenuBtnSoup.addEventListener('click', () => closeScreenWithHistory(soupDetailsScreen));
+}
+
+// Salad Screen Handlers
+const saladDetailsScreen = document.getElementById('saladDetailsScreen');
+const backToMenuBtnSalad = document.getElementById('backToMenuBtnSalad');
+const saladCard = document.querySelector('.dish-card-3d[data-category="salad"]');
+
+if (saladCard) {
+    saladCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (saladDetailsScreen) {
+            saladDetailsScreen.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => saladDetailsScreen.classList.add('active'), 10);
+            pushNavigationState('saladDetailsScreen');
+        }
+    });
+}
+if (backToMenuBtnSalad) {
+    backToMenuBtnSalad.addEventListener('click', () => closeScreenWithHistory(saladDetailsScreen));
 }
 
 document.addEventListener('keydown', (e) => {

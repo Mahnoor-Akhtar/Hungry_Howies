@@ -3808,6 +3808,155 @@ body {
     }
 }
 
+/* Pakistani Karahi Full Screen Modal & Table Styles */
+.karahi-full-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #FFFFFF;
+    color: #1A1A1A;
+    z-index: 99999;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.karahi-full-screen.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.karahi-hero-image-wrapper {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.karahi-hero-img {
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(211, 47, 47, 0.2);
+    border: 4px solid #FFFFFF;
+    outline: 1px solid rgba(0, 0, 0, 0.08);
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.karahi-hero-img:hover {
+    transform: scale(1.03);
+}
+
+.karahi-table-header {
+    background: linear-gradient(135deg, #D32F2F 0%, #B71C1C 100%);
+    color: #FFFFFF;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.biryani-header {
+    background: linear-gradient(135deg, #C62828 0%, #8E0000 100%);
+}
+
+.karahi-table-header .header-title-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.price-header-labels {
+    display: flex;
+    gap: 12px;
+    min-width: 170px;
+    justify-content: flex-end;
+}
+
+.price-header-labels span {
+    font-size: 0.82rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 800;
+    width: 80px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.karahi-item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: background 0.25s ease;
+}
+
+.karahi-item-row:hover {
+    background: rgba(211, 47, 47, 0.03);
+}
+
+.karahi-item-row:last-child {
+    border-bottom: none;
+}
+
+.karahi-item-prices {
+    display: flex;
+    gap: 12px;
+    min-width: 170px;
+    justify-content: flex-end;
+}
+
+.karahi-item-prices .item-price-badge {
+    width: 80px;
+    text-align: center;
+    padding: 6px 10px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.88rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.karahi-item-prices .half-badge {
+    background: #FFF3E0;
+    color: #E65100;
+    border: 1px solid rgba(230, 81, 0, 0.2);
+}
+
+.karahi-item-prices .full-badge {
+    background: #FFEBEE;
+    color: #D32F2F;
+    border: 1px solid rgba(211, 47, 47, 0.2);
+}
+
+@media (max-width: 768px) {
+    .karahi-sections-grid {
+        grid-template-columns: 1fr;
+    }
+    .price-header-labels, .karahi-item-prices {
+        min-width: 140px;
+        gap: 6px;
+    }
+    .price-header-labels span, .karahi-item-prices .item-price-badge {
+        width: 68px;
+        font-size: 0.8rem;
+        padding: 4px 6px;
+    }
+    .karahi-hero-img {
+        max-width: 280px;
+    }
+}
+
+
 
 
 
